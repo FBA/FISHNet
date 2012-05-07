@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<project name="sample" default="makejar" basedir=".">
+
+    <!--  NOTE: THE FOLLOWING LINES SHOULD BE EDITED FOR YOUR PROJECT:  -->
+    <property name="root.project.name" value="ConversionAndIngestion"/>
+
+   <!-- NOTE: THE REST OF THIS FILE CAN PROBABLY REMAIN UNCHANGED FOR YOUR NEW PROJECTS -->
+
+   <property name="jar.module" value="${root.project.name}.jar"/>
+
+   <target name="makejar" depends="clean">
+      <mkdir dir="dist"/>
+   	  <mkdir dir="dist/lib"/>
+      <jar jarfile="dist/${jar.module}">
+         <fileset dir="bin">
+             <include name="**/*.class"/>
+         </fileset>
+      	<manifest>
+      		<attribute name="Main-Class" value="org.freshwaterlife.conversion.client.CDSISISToFOXML"/>
+      		<attribute name="Class-Path" value="${manifest.classpath}"/>
+		</manifest>
+       </jar>
+   	   <copy todir="dist/lib">
+   		 <fileset dir="lib">
+   	 	    <include name="**/*.jar"/>
+   		 </fileset>
+   	   </copy>
+   </target>
+	
+   <target name="clean">
+   	<delete dir="dist/lib"/>
+   	<delete dir="dist"/>
+   </target>
+
+	<path id="build.classpath">
+	  <fileset dir="${basedir}">
+	     <include name="lib/*.jar"/>
+	  </fileset>
+	</path>
+
+	<pathconvert property="manifest.classpath" pathsep=" ">
+	  <path refid="build.classpath"/>
+	  <mapper>
+	    <chainedmapper>
+	       <flattenmapper/>
+	       <globmapper from="*.jar" to="lib/*.jar"/>
+	    </chainedmapper>
+	  </mapper>
+	</pathconvert>
+
+	
+
+</project>

@@ -1,0 +1,114 @@
+<foxml:digitalObject xmlns:foxml="info:fedora/fedora-system:def/foxml#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="1.1" xsi:schemaLocation="info:fedora/fedora-system:def/foxml# http://www.fedora.info/definitions/1/0/foxml1-1.xsd">
+  <foxml:objectProperties>
+    <foxml:property NAME="info:fedora/fedora-system:def/model#state" VALUE="A" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#label" VALUE="FISHNet Dataset" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#ownerId" VALUE="fedoraAdmin" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#createdDate" VALUE="2010-12-14T09:29:12.017Z" />
+    <foxml:property NAME="info:fedora/fedora-system:def/view#lastModifiedDate" VALUE="2010-12-14T09:29:12.017Z" />
+  </foxml:objectProperties>
+  <foxml:datastream CONTROL_GROUP="X" ID="DC" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2010-12-14T09:29:12.017Z" FORMAT_URI="http://www.openarchives.org/OAI/2.0/oai_dc/" ID="DC1.0" LABEL="Dublin Core Record for this object" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+          <dc:title>FISHNet Dataset</dc:title>
+          <dc:identifier>(PID)</dc:identifier>
+        </oai_dc:dc>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream CONTROL_GROUP="X" ID="RELS-EXT" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2010-12-14T09:29:12.017Z" FORMAT_URI="info:fedora/fedora-system:FedoraRELSExt-1.0" ID="RELS-EXT1.0" LABEL="RDF Statements about this object" MIMETYPE="application/rdf+xml">
+      <foxml:xmlContent>
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:fedora-model="info:fedora/fedora-system:def/model#">
+          <rdf:Description>
+            <fedora-model:hasModel rdf:resource="info:fedora/DatasetConfig:CONTENT-MODEL" />
+          </rdf:Description>
+        </rdf:RDF>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream ID="descMetadata" STATE="A" CONTROL_GROUP="X">
+    <foxml:datastreamVersion ID="descMetaData1.0" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
+          <!-- Copyright owner(s) -->
+          <mods:name>
+		    <mods:namePart>FBA</mods:namePart>
+		    <mods:role>
+			  <mods:roleTerm type="text">owner</mods:roleTerm>
+			</mods:role>
+		  </mods:name>
+		  <mods:extension xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco">
+		    <gmd:contact>
+		      <gmd:CI_ResponsibleParty>
+		  	    <!-- Uploader -->
+		  	    <gmd:organisationName>
+		  	      <gco:CharacterString>mhaft</gco:CharacterString>
+		  	    </gmd:organisationName>
+		  	  </gmd:CI_ResponsibleParty>
+		  	</gmd:contact>
+		  </mods:extension>
+		  <mods:extension xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco">
+		    <gmd:contact>
+		      <gmd:CI_ResponsibleParty>
+		  	    <gmd:contactInfo>
+			      <gmd:CI_Contact>
+			        <!-- Contact Telephone -->
+			        <gmd:phone>
+			          <gmd:CI_Telephone>
+			            <gmd:voice>
+			              <gco:CharacterString>01539487716</gco:CharacterString>
+			            </gmd:voice>
+			          </gmd:CI_Telephone>
+			        </gmd:phone>
+			        <!-- Contact Email -->
+			        <gmd:address>
+			          <gmd:CI_Address>
+			            <gmd:electronicMailAddress>
+			              <gco:CharacterString>mhaft@fba.org.uk</gco:CharacterString>
+			            </gmd:electronicMailAddress>
+			          </gmd:CI_Address>
+			        </gmd:address>
+			      </gmd:CI_Contact>
+			    </gmd:contactInfo>
+			    <gmd:role>
+			      <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
+			    </gmd:role>
+		      </gmd:CI_ResponsibleParty>
+		    </gmd:contact>
+		  </mods:extension>
+		  <!-- Contact Person -->
+		  <mods:name>
+		    <mods:namePart>Dr Michael Haft</mods:namePart>
+		    <mods:role>
+			  <mods:roleTerm type="text">contact</mods:roleTerm>
+			</mods:role>
+		  </mods:name>
+		  <!-- Contact Institution -->
+		  <mods:note type="acquisition">FBA</mods:note>
+		  <!-- Original Creator -->
+		  <mods:name>
+		    <mods:namePart>????????</mods:namePart>
+		    <mods:role>
+			  <mods:roleTerm type="text">creator</mods:roleTerm>
+			</mods:role>
+		  </mods:name>
+		  <!-- Dataset Title -->
+		  <mods:titleInfo>
+		    <mods:title>Daily Lake Level Measurements for Windermere</mods:title>
+		  </mods:titleInfo>
+		  <!-- Dataset Description -->
+		  <mods:abstract>Daily Lake Level Measurements for Windermere, data added daily from FBA site at ferry Landing on Lake Winderemre since 1950.</mods:abstract>
+		  <!-- Keywords -->
+		  <mods:subject>
+		    <mods:topic>Lake level, Windermere, daily measurement</mods:topic>
+		  </mods:subject>
+		  <!-- Geographic Keywords -->
+		  <mods:subject>
+		    <mods:geographic>Windermere, Cumbria, Lake District</mods:geographic>
+		  </mods:subject>
+        </mods:mods>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+</foxml:digitalObject>

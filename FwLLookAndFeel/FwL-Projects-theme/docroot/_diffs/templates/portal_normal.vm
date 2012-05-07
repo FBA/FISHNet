@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	$theme.include($top_head_include)
+</head>
+
+<body class="$css_class">
+
+<div id="wrapper">
+	<a href="#main-content" id="skip-to-content">#language("skip-to-content")</a>
+
+	<div id="banner">
+
+            <div id="powered-by">
+                <div id="topbarphrase">Website powered by:</div>
+                <div id="FwLLogo"><span class="fba">FreshwaterLife</span></div>
+            </div>
+
+            <div id="masthead">
+                #parse ("$full_templates_path/FwLMasthead.vm")
+            </div>
+
+            #if(!$is_signed_in)
+                <div id="signin">
+                    <a href="/sign-in" id="sign-in" rel="nofollow">$sign_in_text</a>
+                </div>
+            #end
+        </div>
+
+        <div style="clear:both;"></div>
+
+        #if($is_signed_in)
+            #dockbar()
+        #end
+
+        <div id="heading">
+
+            <div id="headerContent">
+                
+                <h1 id="header1">
+                    <span class="logo">$company_name</span>
+                </h1>
+
+            </div>
+
+        </div>
+
+        #if ($has_navigation)
+            #parse ("$full_templates_path/navigation.vm")
+	#end
+
+        #if ($selectable)
+		$theme.include($content_include)
+	#else
+		$portletDisplay.recycle()
+
+		$portletDisplay.setTitle($the_title)
+
+		$theme.wrapPortlet("portlet.vm", $content_include)
+	#end
+
+        #parse ("$full_templates_path/footer.vm")
+
+</div>
+
+</body>
+
+$theme.include($bottom_include)
+
+</html>

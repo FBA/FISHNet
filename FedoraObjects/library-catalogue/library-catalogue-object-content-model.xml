@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<foxml:digitalObject PID="LibraryConfig:CONTENT-MODEL" VERSION="1.1"
+  xmlns:foxml="info:fedora/fedora-system:def/foxml#"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="info:fedora/fedora-system:def/foxml# http://www.fedora.info/definitions/1/0/foxml1-1.xsd">
+  <foxml:objectProperties>
+    <foxml:property NAME="info:fedora/fedora-system:def/model#state" VALUE="Active"/>
+    <foxml:property NAME="info:fedora/fedora-system:def/model#label" VALUE="Content Model Object for FBA Library Catalogue"/>
+    <foxml:property NAME="info:fedora/fedora-system:def/model#ownerId" VALUE="fedoraAdmin"/>
+    <foxml:property NAME="info:fedora/fedora-system:def/model#createdDate" VALUE="2010-11-23T12:37:42.015Z"/>
+    <foxml:property NAME="info:fedora/fedora-system:def/view#lastModifiedDate" VALUE="2010-11-23T12:37:42.015Z"/>
+  </foxml:objectProperties>
+  <foxml:datastream CONTROL_GROUP="X" ID="DC" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2010-11-23T12:37:42.015Z"
+      FORMAT_URI="http://www.openarchives.org/OAI/2.0/oai_dc/" ID="DC1.0"
+      LABEL="Dublin Core Record for this object" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/">
+          <dc:title>Content Model Object for Library Catalogue Object</dc:title>
+          <dc:identifier>LibraryConfig:CONTENT-MODEL</dc:identifier>
+        </oai_dc:dc>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream CONTROL_GROUP="X" ID="RELS-EXT" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2010-11-23T12:37:42.015Z"
+      FORMAT_URI="info:fedora/fedora-system:FedoraRELSExt-1.0" ID="RELS-EXT1.0"
+      LABEL="RDF Statements about this object" MIMETYPE="application/rdf+xml">
+      <foxml:xmlContent>
+        <rdf:RDF xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/LibraryConfig:CONTENT-MODEL">
+            <fedora-model:hasService rdf:resource="info:fedora/LibraryConfig:XSLT-SDEF"/>
+            <fedora-model:hasModel rdf:resource="info:fedora/fedora-system:ContentModel-3.0"/>
+          </rdf:Description>
+        </rdf:RDF>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream CONTROL_GROUP="X" ID="DS-COMPOSITE-MODEL" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2010-11-23T12:37:42.015Z"
+      FORMAT_URI="info:fedora/fedora-system:FedoraDSCompositeModel-1.0"
+      ID="DS-COMPOSITE-MODEL1.0" LABEL="Datastream Composite Model" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <dsCompositeModel xmlns="info:fedora/fedora-system:def/dsCompositeModel#">
+          <dsTypeModel ID="descMetadata">
+            <form MIME="text/xml"/>
+          </dsTypeModel>
+        </dsCompositeModel>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream ID="XSLT" STATE="A" CONTROL_GROUP="X">
+    <foxml:datastreamVersion ID="XSLT1.0" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exclude-result-prefixes="mods xsi">
+		  
+		  <xsl:output method="html" indent="yes" />
+		  
+		  <xsl:param name="portlet_url"/>
+		  
+		  <xsl:template match="/">
+		    <!-- Insert xslt code here -->
+		    <div class="libcat">
+		    	<xsl:apply-templates select="mods:mods" />
+		    </div>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:mods">
+		  	<!-- Title -->
+		  	<xsl:apply-templates select="mods:titleInfo/mods:title" />
+		  	
+		  	<!-- Author -->
+		  	<h2 class="author">by <xsl:apply-templates select="mods:name/mods:namePart" /></h2>
+		  	
+		  	<div class="libcat-details">
+				<div class="libcat-tabs-container">
+					<div class="libcat-tab libcat-tab-selected">
+						<div>
+							<span class="libcat-tab-text">Item details</span>
+						</div>
+					</div>
+					<div class="libcat-tab">
+						<div>
+							<span class="libcat-tab-text">MODS</span>
+						</div>
+					</div>
+					<div class="libcat-tab">
+						<div>
+							<span class="libcat-tab-text">Other Format</span>
+						</div>
+					</div>
+				</div>
+				<div class="libcat-body">
+					<div class="libcat-header">
+						<div class="libcat-header-text"><xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text></div>
+					</div>
+					<div class="libcat-content">
+						<div class="libcat-content-item">
+							<div class="libcat-content-item-title"><span><b>Title:</b></span></div>
+							<div class="libcat-content-item-value"><span><xsl:value-of select="mods:titleInfo/mods:title" /></span></div>
+						</div>
+						<div class="libcat-content-item">
+							<div class="libcat-content-item-title"><span><b>Author(s):</b></span></div>
+							<div class="libcat-content-item-value"><xsl:apply-templates select="mods:name/mods:namePart" /></div>
+						</div>
+						<xsl:if test="//mods:originInfo/mods:place/mods:placeTerm or //mods:originInfo/mods:publisher or //mods:originInfo/mods:dateIssued">
+						<div class="libcat-content-item">
+							<div class="libcat-content-item-title"><span><b>Published:</b></span></div>
+							<div class="libcat-content-item-value"><xsl:apply-templates select="//mods:originInfo/mods:place/mods:placeTerm" /><xsl:apply-templates select="//mods:originInfo/mods:publisher" /><xsl:apply-templates select="//mods:originInfo/mods:dateIssued" /></div>
+						</div>
+						</xsl:if>
+						<xsl:if test="mods:identifier[@type='isbn']">
+						<div class="libcat-content-item">
+							<div class="libcat-content-item-title"><span><b>ISBN:</b></span></div>
+							<div class="libcat-content-item-value"><xsl:apply-templates select="mods:identifier[@type='isbn']" /></div>
+						</div>
+						</xsl:if>
+						<xsl:if test="//mods:originInfo/mods:edition">
+						<div class="libcat-content-item">
+							<div class="libcat-content-item-title"><span><b>Edition:</b></span></div>
+							<div class="libcat-content-item-value"><xsl:apply-templates select="//mods:originInfo/mods:edition" /></div>
+						</div>
+						</xsl:if>
+						<xsl:if test="mods:identifier[@type='local']">
+						<div class="libcat-content-item">
+							<div class="libcat-content-item-title"><span><b>Collections:</b></span></div>
+							<div class="libcat-content-item-value"><xsl:apply-templates select="mods:identifier[@type='local']" /></div>
+						</div>
+						</xsl:if>
+						<xsl:if test="mods:relatedItem/mods:titleInfo/mods:title or mods:relatedItem/mods:part or mods:physicalDescription">
+						<div class="libcat-content-item">
+							<div class="libcat-content-item-title"><span><b>????????:</b></span></div>
+							<div class="libcat-content-item-value"><xsl:apply-templates select="mods:relatedItem/mods:titleInfo/mods:title" mode="host" /><xsl:apply-templates select="mods:relatedItem/mods:part/mods:detail[@type='volume']/mods:number" mode="volume" /><xsl:apply-templates select="mods:relatedItem/mods:part/mods:detail[@type='part']/mods:number" mode="part" /><xsl:apply-templates select="mods:relatedItem/mods:part/mods:extent[@unit='pages']/mods:list | mods:physicalDescription/mods:extent" mode="pages" /></div>
+						</div>
+						</xsl:if>
+						<xsl:if test="mods:relatedItem/mods:name/mods:namePart">
+						<div class="libcat-content-item">
+							<div class="libcat-content-item-title"><span><xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text></span></div>
+							<div class="libcat-content-item-value"><xsl:apply-templates select="mods:relatedItem/mods:name/mods:namePart" mode="host" /></div>
+						</div>
+						</xsl:if>
+						<xsl:if test="mods:note[@type='version identification']">
+						<div class="libcat-content-item">
+							<div class="libcat-content-item-title"><span><b>Copies:</b></span></div>
+							<div class="libcat-content-item-value"><xsl:value-of select="mods:note[@type='version identification']" /></div>
+						</div>
+						</xsl:if>
+						<xsl:if test="mods:subject/mods:geographic">
+						<div class="libcat-content-item">
+							<div class="libcat-content-item-title"><span><b>BL Index:</b></span></div>
+							<div class="libcat-content-item-value">
+								<ul class="libcat">
+									<xsl:apply-templates select="mods:subject/mods:geographic" mode="subject" />
+								</ul>
+							</div>
+						</div>
+						</xsl:if>
+						<xsl:if test="mods:subject/mods:name[@type='corporate']/mods:namePart">
+						<div class="libcat-content-item">
+							<div class="libcat-content-item-title"><span><b>Water Authority:</b></span></div>
+							<div class="libcat-content-item-value">
+								<ul class="libcat">
+									<xsl:apply-templates select="mods:subject/mods:name[@type='corporate']/mods:namePart" mode="subject" />
+								</ul>
+							</div>
+						</div>
+						</xsl:if>
+						<xsl:if test="mods:subject[@ID]">
+						<div class="libcat-content-item">
+							<div class="libcat-content-item-title"><span><b>Topic(s):</b></span></div>
+							<div class="libcat-content-item-value">
+								<ul class="libcat">
+									<xsl:apply-templates select="mods:subject[@ID]" mode="indexing" />
+								</ul>
+							</div>
+						</div>
+						</xsl:if>
+						<xsl:if test="mods:location">
+						<div class="libcat-content-item">
+							<div class="libcat-content-item-title"><span><b>Holdings:</b></span></div>
+							<div class="libcat-content-item-value">
+								<table id="holdings">
+						        	<thead>
+						        		<tr>
+						            		<th><xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text></th>
+						            		<th>Location</th>
+						        			<th>Shelfmark</th>
+						        		</tr>
+						        	</thead>
+						        	<tbody>
+						        		<xsl:apply-templates select="mods:location" />
+									</tbody>
+								</table>
+							</div>
+						</div>
+						</xsl:if>
+						<br clear="all" />
+					</div>
+				</div>
+			</div>
+		  	
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:title">
+		  	<h1><xsl:value-of select="text()" /></h1>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:namePart">
+		  	<xsl:if test="not(position() = 1)">
+		  		<xsl:text>, </xsl:text>
+		  	</xsl:if>
+		  	<a>
+		  		<xsl:attribute name="href">
+				    <xsl:value-of select="$portlet_url" /><xsl:text disable-output-escaping="yes">?field_name=mods.author&amp;field_value=</xsl:text><xsl:value-of select="text()" />
+				</xsl:attribute>
+		  		<xsl:value-of select="text()" />
+		  	</a>
+		  	<xsl:if test="starts-with(../mods:role/mods:roleTerm/text(), 'ed')">
+	  			<span class="role"> (Editor)</span>
+	  		</xsl:if>
+		  	<xsl:if test="starts-with(../../mods:name[not(@type='personal') and not(@type='corporate')]/mods:role/mods:roleTerm/text(), 'ed')">
+	  			<span class="role"> (Editor)</span>
+	  		</xsl:if>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:placeTerm">
+		  	<span><xsl:value-of select="text()" />: </span>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:publisher">
+		  	<span><xsl:value-of select="text()" />, </span>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:dateIssued">
+		  	<span><xsl:value-of select="text()" /></span>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:identifier[@type='isbn']">
+		  	<span><xsl:value-of select="text()" /></span>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:identifier[@type='local']">
+		    <xsl:if test="not(position() = 1)">
+		  		<xsl:text>, </xsl:text>
+		  	</xsl:if>
+		  	<a href="#"><xsl:value-of select="text()" /></a>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:title" mode="host">
+		    <a href="#"><xsl:value-of select="text()" /></a>
+		    <xsl:text> </xsl:text>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:namePart" mode="host">
+		  	<xsl:if test="not(position() = 1)">
+		  		<xsl:text>, </xsl:text>
+		  	</xsl:if>
+		  	<a href="#"><xsl:value-of select="text()" /></a><span> (Editor)</span>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:number" mode="volume">
+		    <span><xsl:value-of select="text()" /></span>
+		    <xsl:text> </xsl:text>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:number" mode="part">
+		    <span>(<xsl:value-of select="text()" />)</span>
+		    <xsl:text> </xsl:text>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:list | mods:extent" mode="pages">
+		    <span><xsl:value-of select="text()" /></span>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:subject" mode="indexing">
+		  	<li><xsl:apply-templates select="./mods:topic" mode="indexing" /></li>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:topic" mode="indexing">
+		  	<xsl:if test="not(position() = 1)">
+		  		<xsl:text> > </xsl:text>
+		  	</xsl:if>
+		  	<a href="#"><xsl:value-of select="text()" /></a>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:location">
+		  	<tr>
+       			<td><xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text></td>
+	            <td><xsl:value-of select="mods:physicalLocation" /></td>
+   		        <td><xsl:value-of select="mods:shelfLocator" /> (<a href="#">Browse Shelf</a>)</td>
+			</tr>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:geographic | mods:namePart" mode="subject">
+		  	<li><a href="#"><xsl:value-of select="text()" /></a></li>
+		  </xsl:template>
+		  
+		  <xsl:template match="mods:mods1">
+			  <xsl:apply-templates select="./mods:titleInfo/mods:title" />
+		      [Authors]:
+		      <ul class="authors">
+		    	  <xsl:apply-templates select="mods:name/mods:namePart" mode="author" />
+		      </ul>
+		      [Source Authors]:
+		      <ul class="source-authors">
+		    	  <xsl:apply-templates select="mods:relatedItem/mods:name/mods:namePart" mode="author" />
+		      </ul>
+		      <!--<xsl:apply-templates select="mods:name/mods:role/mods:roleTerm" mode="author" /> -->
+		      <xsl:apply-templates select="mods:relatedItem/mods:titleInfo/mods:title" />
+              <div class="page-information">
+              	[Page Info]: 
+                <xsl:apply-templates select="mods:relatedItem/mods:part/mods:detail[@type='volume']/mods:number" mode="volume" />
+                <xsl:apply-templates select="mods:relatedItem/mods:part/mods:detail[@type='part']/mods:number" mode="part" />
+                <xsl:apply-templates select="mods:relatedItem/mods:part/mods:extent[@unit='pages']/mods:list | mods:physicalDescription/mods:extent" mode="pages" />
+                <xsl:apply-templates select="mods:relatedItem/mods:part/mods:extent[not(@unit='pages')]/mods:list" mode="other" />
+			  </div>
+			  <ul class="location">
+			  	  [Copy Info]:
+		    	  <xsl:apply-templates select="mods:location" />
+		      </ul>
+              <ul class="topics">
+		    	  [Topics]:
+		    	  <xsl:apply-templates select="mods:subject/mods:geographic" mode="topic" />
+              	  <xsl:apply-templates select="mods:subject/mods:name/mods:namePart" mode="topic" />
+                  <xsl:apply-templates select="mods:subject[not(@authority='local')]/mods:topic" mode="topic" />
+		      </ul>
+              <ul class="category">
+              	  [Category]: <xsl:apply-templates select="mods:identifier[@type='local']" />
+              </ul>
+              <div id="isbn">ISBN: <xsl:value-of select="mods:identifier[@type='isbn']" /></div>
+              <div class="copies">Copies: <xsl:value-of select="mods:note[@type='version identification']" /></div>
+              <div class="source-characteristics"><xsl:value-of select="mods:note[@type='source characteristics']" /></div>
+              <div class="origin-info">
+              	  <span>Publisher: </span>
+                  <xsl:apply-templates select="//mods:originInfo/mods:place/mods:placeTerm" mode="published" />
+                  <xsl:apply-templates select="//mods:originInfo/mods:publisher" mode="published" />
+                  <xsl:apply-templates select="//mods:originInfo/mods:dateIssued" mode="published" />
+              </div>
+              Edition: <xsl:apply-templates select="//mods:originInfo/mods:edition" mode="published" />
+		  </xsl:template>
+		  
+		  <!-- <xsl:template match="mods:name/mods:namePart" mode="author">
+		  	<li>
+		  		<xsl:value-of select="text()" />
+		  		<xsl:if test="../mods:role/mods:roleTerm">
+		  			<span class="role">(<xsl:value-of select="../mods:role/mods:roleTerm" />)</span>
+		  		</xsl:if>
+		  		<xsl:if test="../../mods:name[not(@type='personal') and not(@type='corporate')]/mods:role/mods:roleTerm">
+		  			<span class="role">(<xsl:value-of select="../../mods:name/mods:role/mods:roleTerm" />)</span>
+		  		</xsl:if>
+		  	</li>
+		  </xsl:template> -->
+
+          <!--<xsl:template match="mods:location">
+		  	<li><xsl:value-of select="mods:physicalLocation" /> Shelfmark: <xsl:value-of select="mods:shelfLocator" /></li>
+		  </xsl:template>-->
+
+          <!--<xsl:template match="mods:topic | mods:geographic | mods:namePart" mode="topic">
+		  	<li><xsl:value-of select="text()" /></li>
+		  </xsl:template>-->
+
+		  <!-- <xsl:template match="mods:dateIssued" mode="published">
+		  	<span class="published-date"><xsl:value-of select="text()" />.</span>
+		  </xsl:template> -->
+		  
+		  <!-- <xsl:template match="mods:placeTerm" mode="published">
+		  	<span class="publisher-location"><xsl:value-of select="text()" />: </span>
+		  </xsl:template> -->
+		  		  
+		  <xsl:template match="mods:extent | mods:list" mode="other">
+		  	<span class="other"><xsl:value-of select="text()" /></span>
+		  </xsl:template>
+		  
+		</xsl:stylesheet>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+</foxml:digitalObject>

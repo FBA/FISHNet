@@ -1,0 +1,331 @@
+<div
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+    <h:form id="searchForm">
+        <h:outputText id="triggerPageBean" value="#{pageBean.urlQValue}" style="display: none"/>
+        <center>
+            <h:panelGrid columns="1" border="0" cellpadding="0" cellspacing="0" width="400">
+                <br/>
+                <br/>
+                <h:panelGroup>
+                    <h:inputText id="qValue" value="#{userBean.qValue}"
+                                 size="40" required="true"
+                                 onfocus="clearText(this)" styleClass="form-text"
+                                 onkeyup="if (event.keyCode == 13) { document.getElementById('searchForm:submitButton').click(); return false;}"
+                                 />
+                    <!-- the onkeypress above stops the enter key submitting the form normally. It should go via userBean.doSearch -->
+                    <h:outputText value="  "/>
+                    <h:commandButton id="submitButton" type="submit" action="#{userBean.doSearch}" styleClass="portlet-form-button" value="Go" />
+                </h:panelGroup>
+            </h:panelGrid>
+        </center>
+        <br/><br/>
+        <ui:fragment rendered="${userBean.qValue != 'Search FreshwaterLife'}">
+            <div id="markupTabs">
+                <ul class="aui-tabview-list">
+                    <li class='aui-tab #{userBean.currentTab == 0 ? "aui-tab-active" : ""}'>
+                        <span class="aui-tab-content">
+                            <h:commandLink id="Everything" action="#{userBean.doReload}">
+                                <h:outputText value="Everything" />
+                                <f:setPropertyActionListener target="#{userBean.currentTab}" value="0" />
+                                <f:setPropertyActionListener target="#{userBean.currentPage}" value="1" />
+                            </h:commandLink>
+                            <span><h:outputText value="( #{userBean.numOfAllResults} )" /></span>
+                        </span>
+                    </li>
+                    <li class='aui-tab #{userBean.currentTab == 1 ? "aui-tab-active" : ""}'>
+                        <span class="aui-tab-content">
+                            <h:commandLink id="FreshwaterLife" action="#{userBean.doReload}">
+                                <h:outputText value="FreshwaterLife Websites" />
+                                <f:setPropertyActionListener target="#{userBean.currentTab}" value="1" />
+                                <f:setPropertyActionListener target="#{userBean.currentPage}" value="1" />
+                            </h:commandLink>
+                            <span><h:outputText value="( #{userBean.numOfLiferayResults} )" /></span>
+                        </span>
+                    </li>
+                    <li class='aui-tab #{userBean.currentTab == 2 ? "aui-tab-active" : ""}'>
+                        <span class="aui-tab-content">
+                            <h:commandLink id="ImageGallery" action="#{userBean.doReload}">
+                                <h:outputText value="Image Gallery" />
+                                <f:setPropertyActionListener target="#{userBean.currentTab}" value="2" />
+                                <f:setPropertyActionListener target="#{userBean.currentPage}" value="1" />
+                            </h:commandLink>
+                            <span><h:outputText value="( #{userBean.numOfImageResults} )" /></span>
+                        </span>
+                    </li>
+                    <li class='aui-tab #{userBean.currentTab == 3 ? "aui-tab-active" : ""}'>
+                        <span class="aui-tab-content">
+                            <h:commandLink id="FBALibrary" action="#{userBean.doReload}">
+                                <h:outputText value="FBA Library" />
+                                <f:setPropertyActionListener target="#{userBean.currentTab}" value="3" />
+                                <f:setPropertyActionListener target="#{userBean.currentPage}" value="1" />
+                            </h:commandLink>
+                            <span><h:outputText value="( #{userBean.numOfLibcatResults} )" /></span>
+                        </span>
+                    </li>
+                    <li class='aui-tab #{userBean.currentTab == 4 ? "aui-tab-active" : ""}'>
+                        <span class="aui-tab-content">
+                            <h:commandLink id="Datasets" action="#{userBean.doReload}">
+                                <h:outputText value="Datasets" />
+                                <f:setPropertyActionListener target="#{userBean.currentTab}" value="4" />
+                                <f:setPropertyActionListener target="#{userBean.currentPage}" value="1" />
+                            </h:commandLink>
+                            <span><h:outputText value="( #{userBean.numOfDatasetResults} )" /></span>
+                        </span>
+                    </li>
+                    <li class='aui-tab #{userBean.currentTab == 5 ? "aui-tab-active" : ""}'>
+                        <span class="aui-tab-content">
+                            <h:commandLink id="ArchivedImages" action="#{userBean.doReload}">
+                                <h:outputText value="Archived Images" />
+                                <f:setPropertyActionListener target="#{userBean.currentTab}" value="5" />
+                                <f:setPropertyActionListener target="#{userBean.currentPage}" value="1" />
+                            </h:commandLink>
+                            <span><h:outputText value="( #{userBean.numOfImageArchiveResults} )" /></span>
+                        </span>
+                    </li>
+                </ul>
+                <div class="aui-tabview-content aui-tabview-content-border aui-widget-bd" id="testContent">
+                    <div class="aui-tabview-content-item">
+                        <ui:fragment rendered="#{userBean.numOfCurrentTabResults != 0}">
+                            <!-- There are some results -->
+                            <ui:repeat value="#{userBean.searchResults}" var="item">
+                                <!-- Fragment for Liferay item only -->
+                                <ui:fragment rendered="#{item.doctype=='1'}">
+                                    <br/>
+                                    <div style="font-weight: bold; display: inline">
+                                        <ui:fragment rendered="#{item.journalArticleURL != 'nourl'}">
+                                            <h:outputLink value="#{item.journalArticleURL}">
+                                                <h:outputText escape="false" value="#{item.title}"/>
+                                            </h:outputLink>
+                                        </ui:fragment>
+                                        <!-- above for available url, below if not -->
+                                        <ui:fragment rendered="#{item.journalArticleURL == 'nourl'}">
+                                            <h:outputText escape="false" value="#{item.title}"/>
+                                        </ui:fragment>
+                                        <br/>
+                                    </div>
+                                    <div style="display: inline">
+                                        <h:outputText value="#{item.contentSubstring}"/>
+                                        <br/>
+                                        <h:outputText value="#{item.summary}" />
+                                    </div>
+                                    <br/><hr/>
+                                </ui:fragment>
+                                <!-- Fragment for Image Gallery item only -->
+                                <ui:fragment rendered="#{item.doctype=='2'}">
+                                    <br/>
+                                    <div style="font-weight: bold; display: inline">
+                                        <h:outputText escape="false" value="#{item.title}"/>
+                                        <br/>
+                                    </div>
+                                    <div style="display: inline;">
+                                        <h:panelGrid columns="3" cellpadding="0" cellspacing="0"  columnClasses="colStyle1,colStyle2,colStyle3" >
+                                            <h:outputLink value="#{item.forwardUrl}">
+                                                <h:graphicImage alt="#{item.title}" value="#{item.thumbUrl}" />
+                                            </h:outputLink>
+                                            <h:outputText value=" "/>
+                                            <h:outputText escape="false" value="#{item.contentSubstring}"/>
+                                        </h:panelGrid>
+                                    </div>
+                                    <br/><hr/>
+                                </ui:fragment>
+                                <!-- Fragment for FBA Library item only -->
+                                <ui:fragment rendered="#{item.doctype=='3'}">
+                                    <br/>
+                                    <ui:fragment rendered="#{item.libcatType == 'A'}">
+                                        <div style="display: inline;">
+                                            <h:outputText value="#{item.modsAuthor}"/>
+                                            <br/>
+                                            <h:outputText value="#{item.modsPublicationDate}"/>
+                                            <br/>
+                                            <h:outputLink value="#{item.libcatArticleURL}">
+                                                <h:outputText value="#{item.modsTitle}"/>
+                                            </h:outputLink>
+                                            <br/>
+                                            <div style="font-style: italic; display: inline">
+                                                <h:outputText value="#{item.modsHostTitle} "/>
+                                            </div>
+                                            <div style="font-weight: bold; display: inline">
+                                                <h:outputText value="#{item.modsExtVolume} "/>
+                                            </div>
+                                            <h:outputText value="(#{item.modsExtPart}) " rendered="#{item.modsExtPart != null}" />
+                                            <h:outputText value="#{item.modsExtPages}"/>
+                                            <br/>
+                                            <h:outputText value="#{item.modsShelfmark}"/>
+                                        </div>
+                                        <br/><hr/>
+                                    </ui:fragment>
+                                    <ui:fragment rendered="#{item.libcatType == 'B'}">
+                                        <div style="display: inline;">
+                                            <h:outputText value="#{item.modsAuthor}"/>
+                                            <br/>
+                                            <h:outputText value="#{item.modsPublicationDate}"/>
+                                            <br/>
+                                            <h:outputLink value="#{item.libcatArticleURL}">
+                                                <h:outputText value="#{item.modsTitle}"/>
+                                            </h:outputLink>
+                                            <br/>
+                                            <div style="display: inline">
+                                                <h:outputText value="#{item.modsPublisher}: "/>
+                                            </div>
+                                            <div style="display: inline">
+                                                <h:outputText value="#{item.modsPublisherLocation} "/>
+                                            </div>
+                                            <br/>
+                                            <h:outputText value="#{item.modsShelfmark}"/>
+                                        </div>
+                                        <br/><hr/>
+                                    </ui:fragment>
+                                    <ui:fragment rendered="#{item.libcatType == 'C'}">
+                                        <div style="display: inline;">
+                                            <h:outputText value="#{item.modsAuthor}"/>
+                                            <br/>
+                                            <h:outputText value="#{item.modsPublicationDate}"/>
+                                            <br/>
+                                            <h:outputLink value="#{item.libcatArticleURL}">
+                                                <h:outputText value="#{item.modsTitle}"/>
+                                            </h:outputLink>
+                                            <br/>
+                                            <div style="font-style: italic; display: inline">
+                                                <h:outputText value="in "/>
+                                            </div>
+                                            <div style="display: inline">
+                                                <h:outputText value="#{item.modsHostTitle} "/>
+                                            </div>
+                                            <div style="display: inline">
+                                                <h:outputText value="(#{item.modsHostAuthor}) "/>
+                                            </div>
+                                            <br/>
+                                            <div style="display: inline">
+                                                <h:outputText value="#{item.modsPublisher}, "/>
+                                            </div>
+                                            <div style="display: inline">
+                                                <h:outputText value="#{item.modsPublisherLocation} "/>
+                                            </div>
+                                            <br/>
+                                            <h:outputText value="#{item.modsShelfmark}"/>
+                                        </div>
+                                        <br/><hr/>
+                                    </ui:fragment>
+                                </ui:fragment>
+                                <!-- Fragment for Dataset item only -->
+                                <ui:fragment rendered="#{item.doctype=='4'}">
+                                    <br/>
+                                    <div style="display: inline">
+					<h:outputLink value="#{item.datasetArticleURL}">
+					    <h:outputText escape="false" value="#{item.modsTitle}"/>
+					</h:outputLink>
+                                        <br/>
+                                        <h:outputText escape="false" value="#{item.modsAbstract}"/>
+                                        <br/>
+                                        <h:outputText escape="false" value="Keywords: "/>
+                                        <h:outputText escape="false" value="#{item.modsSubjectTopic}"/>
+                                    </div>
+                                    <br/><hr/>
+                                </ui:fragment>
+                                <!-- Fragment for Image Archive item only -->
+                                <ui:fragment rendered="#{item.doctype=='5'}">
+                                    <br/>
+                                    <div style="font-weight: bold; display: inline">
+                                        <h:outputText escape="false" value="#{item.title}"/>
+                                        <br/>
+                                    </div>
+                                    <div style="display: inline;">
+                                        <h:panelGrid columns="3" cellpadding="0" cellspacing="0"  columnClasses="colStyle1,colStyle2,colStyle3" >
+                                            <h:outputLink value="#{item.forwardUrl}">
+                                                <h:graphicImage alt="#{item.title}" value="#{item.thumbUrl}" />
+                                            </h:outputLink>
+                                            <h:outputText value=" "/>
+                                            <h:outputText escape="false" value="#{item.modsAbstract}"/>
+                                        </h:panelGrid>
+                                    </div>
+                                    <br/><hr/>
+                                </ui:fragment>
+                            </ui:repeat>
+                            <!-- Paging -->
+                            <!-- First Page -->
+                            <ui:fragment rendered="#{userBean.currentPage gt 1}">
+                                <h:commandLink id="First" action="#{userBean.doReload}">
+                                    <h:outputText value="First " />
+                                    <f:setPropertyActionListener target="#{userBean.currentPage}" value="1" />
+                                </h:commandLink>
+                            </ui:fragment>
+                            <h:outputText value="First" rendered="#{userBean.currentPage le 1}" />
+
+                            <!-- Previous Page -->
+                            <ui:fragment rendered="#{userBean.currentPage gt 1}">
+                                <h:commandLink id="Previous" action="#{userBean.doReload}">
+                                    <h:outputText value="Previous " />
+                                    <f:setPropertyActionListener target="#{userBean.currentPage}" value="#{userBean.currentPage-1}" />
+                                </h:commandLink>
+                            </ui:fragment>
+                            <h:outputText value="Previous" rendered="#{userBean.currentPage le 1}" />
+
+                            <!-- Page Numbers -->
+                            <ui:repeat value="#{userBean.pageIndex}" var="i">
+                                <ui:fragment rendered="#{i ne userBean.currentPage}">
+                                    <h:commandLink id="Page#{i}" action="#{userBean.doReload}">
+                                        <h:outputText value="#{i} " />
+                                        <f:setPropertyActionListener target="#{userBean.currentPage}" value="#{i}" />
+                                    </h:commandLink>
+                                </ui:fragment>
+                                <h:outputText value="#{i} " rendered="#{i eq userBean.currentPage}" />
+                            </ui:repeat>
+
+                            <!-- Next Page -->
+                            <ui:fragment rendered="#{userBean.currentPage lt userBean.totalPages}">
+                                <h:commandLink id="Next" action="#{userBean.doReload}">
+                                    <h:outputText value="Next " />
+                                    <f:setPropertyActionListener target="#{userBean.currentPage}" value="#{userBean.currentPage+1}" />
+                                </h:commandLink>
+                            </ui:fragment>
+                            <h:outputText value="Next" rendered="#{userBean.currentPage ge userBean.totalPages}" />
+
+                            <!-- Last Page -->
+                            <ui:fragment rendered="#{userBean.currentPage lt userBean.totalPages}">
+                                <h:commandLink id="Last" action="#{userBean.doReload}">
+                                    <h:outputText value="Last " />
+                                    <f:setPropertyActionListener target="#{userBean.currentPage}" value="#{userBean.totalPages}" />
+                                </h:commandLink>
+                            </ui:fragment>
+                            <h:outputText value="Last" rendered="#{userBean.currentPage ge userBean.totalPages}" />
+                        </ui:fragment>
+
+                        <!-- above is the rendered section for returned results, below for no results-->
+                        <ui:fragment rendered="#{userBean.numOfCurrentTabResults == 0}">
+                            <div style="font-weight: bold; display: inline">
+                                <h:outputText value="No results found"/>
+                            </div>
+                        </ui:fragment>
+                    </div>
+                </div>
+
+                <style type="text/css">
+                    .colStyle1 { width: 160px;
+                    }
+                    .colStyle2 { width: 20px;
+                    }
+                    .colStyle3 {
+                    }
+                    .aui-tabview-content-border {
+                        border:1px solid #c8c9ca;
+                        padding:4px;
+                    }
+                </style>
+            </div>
+        </ui:fragment>
+        <script type="text/javascript" charset="utf-8">
+            function clearText(field)
+            {
+                if ('Search FreshwaterLife' == field.value)
+                {
+                    field.value = '';
+                }
+            }
+        </script>
+    </h:form>
+</div>

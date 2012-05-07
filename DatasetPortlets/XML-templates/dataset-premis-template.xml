@@ -1,0 +1,21 @@
+<premis:premis xmlns:premis="http://www.loc.gov/standards/premis" version="2.0">
+  <premis:event>
+     <premis:eventIdentifier>eventIdentifier</premis:eventIdentifier>
+     <premis:eventType>eventType</premis:eventType>
+     <premis:eventDateTime>eventDateTime</premis:eventDateTime>
+     <premis:eventDetail>eventDetail</premis:eventDetail>
+     <premis:eventOutcomeInformation>
+         <premis:eventOutcome>eventOutcome</premis:eventOutcome>
+         <premis:eventOutcomeDetail>eventOutcomeDetail</premis:eventOutcomeDetail>
+     </premis:eventOutcomeInformation>                                                       
+     <premis:linkingAgentIdentifier>
+         <premis:linkingAgentIdentifierType>Agent</premis:linkingAgentIdentifierType>
+         <premis:linkingAgentIdentifierValue>userid</premis:linkingAgentIdentifierValue>                                                      
+     </premis:linkingAgentIdentifier>
+     <premis:linkingAgentIdentifier>
+         <premis:linkingAgentIdentifierType>Full Name</premis:linkingAgentIdentifierType>
+         <premis:linkingAgentIdentifierValue>name</premis:linkingAgentIdentifierValue>                                                        
+     </premis:linkingAgentIdentifier>         
+     <premis:linkingObjectIdentifier>pid</premis:linkingObjectIdentifier>
+   </premis:event>
+</premis:premis> 

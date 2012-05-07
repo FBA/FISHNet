@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE faces-config PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN" "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+
+<faces-config xmlns="http://java.sun.com/JSF/Configuration">
+    <application>
+	<locale-config>
+	    <default-locale>en</default-locale>
+	</locale-config>
+	<view-handler>com.sun.facelets.FaceletPortletViewHandler</view-handler>
+    </application>
+    <managed-bean>
+	<managed-bean-name>sessionBean</managed-bean-name>
+	<managed-bean-class>org.freshwaterlife.portlets.dataset.SessionBean</managed-bean-class>
+
+	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+	    <property-name>solrURL</property-name>
+	    <value>http://172.16.0.92:8080/solr/core_all</value>
+	    <!-- v a l u e>http://10.0.10.204:8080/solr/core_all</ v a l u e -->
+	</managed-property>
+	<managed-property>
+	    <property-name>editMetadataLink</property-name>
+	    <!-- v a l u e>http://localhost:8080/web/guest/edit-data/-/dataset-edit/</ v a l u e  -->
+	    <value>http://new.freshwaterlife.org/web/guest/edit-data/-/dataset-edit/</value>
+	</managed-property>
+	<managed-property>
+	    <property-name>profileLink</property-name>
+	    <!-- v a l u e>http://localhost:8080/web/</v a l u e -->
+	    <value>http://new.freshwaterlife.org/web/</value>
+	</managed-property>
+    </managed-bean>
+    <managed-bean>
+	<managed-bean-name>doiSplashPageBean</managed-bean-name>
+	<managed-bean-class>org.freshwaterlife.portlets.dataset.DoiSplashPageBean</managed-bean-class>
+	<managed-bean-scope>request</managed-bean-scope>
+	<managed-property>
+	    <property-name>sessionBean</property-name>
+	    <value>#{sessionBean}</value>
+	</managed-property>
+    </managed-bean>
+    <managed-bean>
+	<managed-bean-name>viewPageBean</managed-bean-name>
+	<managed-bean-class>org.freshwaterlife.portlets.dataset.viewPageBean</managed-bean-class>
+	<managed-bean-scope>request</managed-bean-scope>
+	<managed-property>
+	    <property-name>sessionBean</property-name>
+	    <value>#{sessionBean}</value>
+	</managed-property>
+    </managed-bean>
+    <lifecycle>
+	<phase-listener>net.sf.jsfcomp.onload.OnLoadPhaseListener</phase-listener>
+    </lifecycle>
+    <navigation-rule>
+	<navigation-case>
+	    <to-view-id>/view.xhtml</to-view-id>
+	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+	<from-view-id>/view.xhtml</from-view-id>
+	<navigation-case>
+	    <from-outcome>applyForDOI</from-outcome>
+	    <to-view-id>/applyForDOI.xhtml</to-view-id>
+	</navigation-case>
+	
+	<navigation-case>
+	    <from-outcome>reject</from-outcome>
+	    <to-view-id>/demoteToRed.xhtml</to-view-id>
+	</navigation-case>
+	
+        <navigation-case>
+            <from-outcome>approve</from-outcome>
+            <to-view-id>/approveDataset.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+	<from-view-id>/applyForDOI.xhtml</from-view-id>
+	<navigation-case>
+	    <from-outcome>agree</from-outcome>
+	    <to-view-id>/view.xhtml</to-view-id>
+	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+	<from-view-id>/demoteToRed.xhtml</from-view-id>
+	<navigation-case>
+	    <from-outcome>demoted</from-outcome>
+	    <to-view-id>/demoted.xhtml</to-view-id>
+	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+	<from-view-id>/*</from-view-id>
+	<navigation-case>
+	    <from-outcome>home</from-outcome>
+	    <to-view-id>/view.xhtml</to-view-id>
+	</navigation-case>
+    </navigation-rule>
+</faces-config>

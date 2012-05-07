@@ -1,0 +1,550 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+    <h:form id="searchForm">
+	<div id="markupTabs">
+	    <ul class="aui-tabview-list">
+		<li class='aui-tab #{userBean.currentTab eq 0 ? "aui-tab-active" : ""}'>
+		    <span class="aui-tab-content">
+			<h:commandLink id="AllDatasets" action="#{userBean.doReload}">
+			    <h:outputText value="All Datasets" />
+			    <f:setPropertyActionListener target="#{userBean.currentTab}" value="0" />
+			    <f:setPropertyActionListener target="#{userBean.currentPage}" value="1" />
+			</h:commandLink>
+			<span>
+			    <h:outputText value="( #{userBean.numOfDatasetResults} )" />
+			</span>
+		    </span>
+		</li>
+		<li class='aui-tab #{userBean.currentTab eq 1 ? "aui-tab-active" : ""}'>
+		    <span class="aui-tab-content">
+			<h:commandLink id="RedDatasets" action="#{userBean.doReload}">
+			    <h:outputText value="Red Datasets" />
+			    <f:setPropertyActionListener target="#{userBean.currentTab}" value="1" />
+			    <f:setPropertyActionListener target="#{userBean.currentPage}" value="1" />
+			</h:commandLink>
+			<span>
+			    <h:outputText value="( #{userBean.numOfRedResults} )" />
+			</span>
+		    </span>
+		</li>
+		<li class='aui-tab #{userBean.currentTab eq 2 ? "aui-tab-active" : ""}'>
+		    <span class="aui-tab-content">
+			<h:commandLink id="OrangeDatasets" action="#{userBean.doReload}">
+			    <h:outputText value="Orange Datasets" />
+			    <f:setPropertyActionListener target="#{userBean.currentTab}" value="2" />
+			    <f:setPropertyActionListener target="#{userBean.currentPage}" value="1" />
+			</h:commandLink>
+			<span>
+			    <h:outputText value="( #{userBean.numOfOrangeResults} )" />
+			</span>
+		    </span>
+		</li>
+		<li class='aui-tab #{userBean.currentTab eq 3 ? "aui-tab-active" : ""}'>
+		    <span class="aui-tab-content">
+			<h:commandLink id="GreenDatasets" action="#{userBean.doReload}">
+			    <h:outputText value="Green Datasets" />
+			    <f:setPropertyActionListener target="#{userBean.currentTab}" value="3" />
+			    <f:setPropertyActionListener target="#{userBean.currentPage}" value="1" />
+			</h:commandLink>
+			<span>
+			    <h:outputText value="( #{userBean.numOfGreenResults} )" />
+			</span>
+		    </span>
+		</li>
+		<ui:fragment rendered="#{((userBean.isUserAnEditor eq true) or (userBean.isUserAnAdministrator eq true))}">
+		    <li class='aui-tab #{userBean.currentTab eq 4 ? "aui-tab-active" : ""}'>
+			<span class="aui-tab-content">
+			    <h:commandLink id="DatasetsAwaitingReviewer" action="#{userBean.doReload}">
+				<h:outputText value="Datasets Awaiting Reviewer" />
+				<f:setPropertyActionListener target="#{userBean.currentTab}" value="4" />
+				<f:setPropertyActionListener target="#{userBean.currentPage}" value="1" />
+			    </h:commandLink>
+			    <span>
+				<h:outputText value="( #{userBean.numOfReviewableResults} )" />
+			    </span>
+			</span>
+		    </li>
+		    <li class='aui-tab #{userBean.currentTab eq 5 ? "aui-tab-active" : ""}'>
+			<span class="aui-tab-content">
+			    <h:commandLink id="RecommendedforDOI" action="#{userBean.doReload}">
+				<h:outputText value="Recommended for DOI" />
+				<f:setPropertyActionListener target="#{userBean.currentTab}" value="5" />
+				<f:setPropertyActionListener target="#{userBean.currentPage}" value="1" />
+			    </h:commandLink>
+			    <span>
+				<h:outputText value="( #{userBean.numOfRecommendedforDOIResults} )" />
+			    </span>
+			</span>
+		    </li>
+		</ui:fragment>
+	    </ul>
+	    <div class="aui-tabview-content aui-tabview-content-border aui-widget-bd" id="testContent">
+		<div class="aui-tabview-content-item">
+		    <!-- This fragment is for All My Datasets, Red, Orange and Green Only -->
+		    <ui:fragment rendered="#{userBean.currentTab le 3}">
+			<ui:fragment rendered="#{userBean.numOfCurrentTabResults ne 0}">
+			    <!-- There are some results -->
+			    <table style="width: 100%" border="0">
+				<!-- Column headers -->
+				<thead>
+				    <tr>
+					<th>Dataset</th>
+					<th>&#160;</th>
+					<th>Status</th>
+					<th>&#160;</th>
+					<th>Uploader</th>
+					<th>&#160;</th>
+					<th>Date Modified</th>
+					<th>&#160;</th>
+					<th>Actions</th>
+				    </tr>
+				</thead>
+
+				<ui:repeat value="#{userBean.searchResults}" var="item">
+				    <!-- Fragment for Red item only -->
+				    <ui:fragment rendered="#{item.category eq 'red'}">
+					<tr>
+					    <td style="width: 42.5%;">
+						<h:outputLink value="#{item.datasetdisplayURL}">
+						    <h:outputText escape="false" value="#{item.modsTitle}" />
+						</h:outputLink>
+						<br />
+						<h:outputText escape="false" value="#{item.modsAbstract}" />
+						<br />
+						<h:outputText escape="false" value="Keywords: " />
+						<h:outputText escape="false" value="#{item.modsSubjectTopic}" /></td>
+					    <td style="width: 1%;"></td>
+					    <td style="width: 11.5%;">
+						<h:graphicImage id="status" value="#{item.statusImgURL}" title="#{item.status}" /></td>
+					    <td style="width: 1%;"></td>
+					    <td style="width: 11.5%;">
+						<h:outputLink value="#{userBean.profileLink}#{item.uploaderScreenName}/profile">
+						<h:outputText escape="false" value="#{item.uploader}" />
+						</h:outputLink></td>
+					    <td style="width: 1%;"></td>
+					    <td style="width: 11.5%;">
+						<h:outputText escape="false" value="#{item.lastModifiedDate}" /></td>
+					    <td style="width: 1%;"></td>
+					    <td style="width: 20%;">
+						<ul>
+						    <li>
+							<h:outputLink value="#{userBean.editMetadataLink}#{item.pid}/metadata">Edit Metadata</h:outputLink>
+						    </li>
+						    <li>
+							<h:outputLink value="#{userBean.editMetadataLink}#{item.pid}/upload">Add/Update Existing Dataset</h:outputLink>
+						    </li>
+						    <li>
+							<h:commandLink 	id="submitforDOI" action="#{item.doSubmitForDOI}" 
+								    onclick="if (!confirm('Are you sure you want to submit \'#{item.modsTitleEscaped}\' for DOI?')) return false">
+							    <h:outputText value="Submit for Digital Object Identifier" />
+							    <f:setPropertyActionListener target="#{userBean.workingPid}" value="#{item.pid}" />
+							</h:commandLink>
+						    </li>
+						    <li>
+							<h:commandLink 	id="delete"
+								    action="#{item.doDelete}"
+								    onclick="if (!confirm('Are you sure you want to remove \'#{item.modsTitleEscaped}\'?')) return false">
+							    <h:outputText value="Remove Dataset from repository" />
+							</h:commandLink>
+						    </li>
+						</ul></td>
+					</tr>
+					<tr>
+					    <td colspan="9"><hr/></td>
+					</tr>
+				    </ui:fragment>
+				    <!-- Fragment for Orange item only -->
+				    <ui:fragment rendered="#{item.category eq 'orange'}">
+					<tr>
+					    <td style="width: 42.5%;">
+					<h:outputLink value="#{item.datasetdisplayURL}">
+					    <h:outputText escape="false" value="#{item.modsTitle}" />
+					</h:outputLink>
+					<br />
+					<h:outputText escape="false" value="#{item.modsAbstract}" />
+					<br />
+					<h:outputText escape="false" value="Keywords: " />
+					<h:outputText escape="false" value="#{item.modsSubjectTopic}" /></td>
+					<td style="width: 1%;"></td>
+					<td style="width: 11.5%;"><h:graphicImage id="status3"
+										  value="#{item.statusImgURL}" title="#{item.status}" /></td>
+					<td style="width: 1%;"></td>
+					<td style="width: 11.5%;">
+					<h:outputLink value="#{userBean.profileLink}#{item.uploaderScreenName}/profile">
+					    <h:outputText escape="false" value="#{item.uploader}" />
+					</h:outputLink></td>
+					<td style="width: 1%;"></td>
+					<td style="width: 11.5%;"><h:outputText escape="false"
+										value="#{item.lastModifiedDate}" /></td>
+					<td style="width: 1%;"></td>
+					<td style="width: 20%;">
+					    <ul>
+						<li>
+						<h:commandLink id="makedatasetpublic"
+							       action="#{item.doMakeDatasetPublic}"
+							       onclick="if (!confirm('Are you sure you want to make \'#{item.modsTitle}\' public?')) return false">
+						    <h:outputText value="#{item.makeDatasetPublicText}" />
+						</h:commandLink>
+						</li>
+						<li><h:outputText escape="false" value="Grant access to Dataset" /></li>
+						    <li>
+							<h:commandLink 	id="deleteorange"
+								    action="#{item.doDelete}"
+								    onclick="if (!confirm('Are you sure you want to remove \'#{item.modsTitleEscaped}\'?')) return false">
+							    <h:outputText value="Remove Dataset from repository" />
+							</h:commandLink>
+						    </li>
+					    </ul></td>
+					</tr>
+					<tr>
+					    <td colspan="9"><hr/></td>
+					</tr>
+				    </ui:fragment>
+				    <!-- Fragment for Green item only -->
+				    <ui:fragment rendered="#{item.category eq 'green'}">
+					<tr>
+					    <td style="width: 42.5%;">
+					<h:outputLink value="#{item.datasetdisplayURL}">
+					    <h:outputText escape="false" value="#{item.modsTitle}" />
+					</h:outputLink>
+					<br />
+					<h:outputText escape="false"
+						      value="#{item.modsAbstract}" /> <br /> <h:outputText
+						      escape="false" value="Keywords: " /> <h:outputText
+						      escape="false" value="#{item.modsSubjectTopic}" /></td>
+					<td style="width: 1%;"></td>
+					<td style="width: 11.5%;"><h:graphicImage id="status4"
+										  value="#{item.statusImgURL}" title="#{item.status}" /></td>
+					<td style="width: 1%;"></td>
+					<td style="width: 11.5%;"><h:outputLink
+					    value="#{userBean.profileLink}#{item.uploaderScreenName}/profile">
+					    <h:outputText escape="false" value="#{item.uploader}" />
+					</h:outputLink></td>
+					<td style="width: 1%;"></td>
+					<td style="width: 11.5%;"><h:outputText escape="false"
+										value="#{item.lastModifiedDate}" /></td>
+					<td style="width: 1%;"></td>
+					<td style="width: 20%;">
+					    <ul>
+						<li><h:outputText escape="false" value="Grant access to Dataset" /></li>
+						    <li>
+							<h:commandLink 	id="deletegreen"
+								    action="#{item.doDelete}"
+								    onclick="if (!confirm('Are you sure you want to remove \'#{item.modsTitleEscaped}\'?')) return false">
+							    <h:outputText value="Remove Dataset from repository" />
+							</h:commandLink>
+						    </li>
+					</ul></td>
+					</tr>
+					<tr>
+					    <td colspan="9"><hr/></td>
+					</tr>
+				    </ui:fragment>
+				</ui:repeat>
+			    </table>
+			    <!-- Paging -->
+			    <!-- First Page -->
+			    <ui:fragment rendered="#{userBean.currentPage gt 1}">
+				<h:commandLink id="First" action="#{userBean.doReload}">
+				    <h:outputText value="First " />
+				    <f:setPropertyActionListener target="#{userBean.currentPage}"
+								 value="1" />
+				</h:commandLink>
+			    </ui:fragment>
+			    <h:outputText value="First"
+					  rendered="#{userBean.currentPage le 1}" />
+
+			    <!-- Previous Page -->
+			    <ui:fragment rendered="#{userBean.currentPage gt 1}">
+				<h:commandLink id="Previous" action="#{userBean.doReload}">
+				    <h:outputText value="Previous " />
+				    <f:setPropertyActionListener target="#{userBean.currentPage}"
+								 value="#{userBean.currentPage-1}" />
+				</h:commandLink>
+			    </ui:fragment>
+			    <h:outputText value="Previous"
+					  rendered="#{userBean.currentPage le 1}" />
+
+			    <!-- Page Numbers -->
+			    <ui:repeat value="#{userBean.pageIndex}" var="i">
+				<ui:fragment rendered="#{i ne userBean.currentPage}">
+				    <h:commandLink id="Page#{i}" action="#{userBean.doReload}">
+					<h:outputText value="#{i} " />
+					<f:setPropertyActionListener target="#{userBean.currentPage}"
+								     value="#{i}" />
+				    </h:commandLink>
+				</ui:fragment>
+				<h:outputText value="#{i} "
+					      rendered="#{i eq userBean.currentPage}" />
+			    </ui:repeat>
+
+			    <!-- Next Page -->
+			    <ui:fragment
+				rendered="#{userBean.currentPage lt userBean.totalPages}">
+				<h:commandLink id="Next" action="#{userBean.doReload}">
+				    <h:outputText value="Next " />
+				    <f:setPropertyActionListener target="#{userBean.currentPage}"
+								 value="#{userBean.currentPage+1}" />
+				</h:commandLink>
+			    </ui:fragment>
+			    <h:outputText value="Next"
+					  rendered="#{userBean.currentPage ge userBean.totalPages}" />
+
+			    <!-- Last Page -->
+			    <ui:fragment
+				rendered="#{userBean.currentPage lt userBean.totalPages}">
+				<h:commandLink id="Last" action="#{userBean.doReload}">
+				    <h:outputText value="Last " />
+				    <f:setPropertyActionListener target="#{userBean.currentPage}"
+								 value="#{userBean.totalPages}" />
+				</h:commandLink>
+			    </ui:fragment>
+			    <h:outputText value="Last"
+					  rendered="#{userBean.currentPage ge userBean.totalPages}" />
+			</ui:fragment>
+
+			<!-- above is the rendered section for returned results, below for no results-->
+			<ui:fragment rendered="#{userBean.numOfCurrentTabResults eq 0}">
+			    <div style="font-weight: bold; display: inline">
+				<h:outputText value="No results found" />
+			    </div>
+			</ui:fragment>
+		    </ui:fragment>
+
+
+
+
+		    <!-- This fragment is for Editable datasets awaiting reviewer only -->
+		    <ui:fragment rendered="#{((userBean.isUserAnEditor eq true) or (userBean.isUserAnAdministrator eq true))}">
+			<ui:fragment rendered="#{userBean.currentTab eq 4}">
+			    <ui:fragment rendered="#{userBean.numOfCurrentTabResults ne 0}">
+				<!-- There are some results -->
+				<table style="width: 100%" border="0">
+				    <!-- Column headers -->
+				    <thead>
+					<tr>
+					    <th>Dataset</th>
+					    <th>&#160;</th>
+					    <th>Status</th>
+					    <th>&#160;</th>
+					    <th>Uploader</th>
+					    <th>&#160;</th>
+					    <th>Date Modified</th>
+					    <th>&#160;</th>
+					    <th>Actions</th>
+					</tr>
+				    </thead>
+				    <ui:repeat value="#{userBean.reviewableSearchResults}" var="item">
+					<!-- Fragment for RedOrange item only -->
+					<ui:fragment rendered="#{item.category eq 'redorange'}">
+					    <ui:fragment rendered="#{item.reviewerName eq 'noreviewer'}">
+					    <tr>
+						<td style="width: 42.5%;">
+					    <h:outputLink value="#{item.datasetdisplayURL}">
+						<h:outputText escape="false" value="#{item.modsTitle}" />
+					    </h:outputLink>
+					    <br />
+					    <h:outputText escape="false" value="#{item.modsAbstract}" />
+					    <br />
+					    <h:outputText escape="false" value="Keywords: " />
+					    <h:outputText escape="false" value="#{item.modsSubjectTopic}" /></td>
+					    <td style="width: 1%;"></td>
+					    <td style="width: 11.5%;">
+					    <h:graphicImage id="status2" value="#{item.statusImgURL}" title="#{item.status}" /></td>
+					    <td style="width: 1%;"></td>
+					    <td style="width: 11.5%;">
+					    <h:outputLink value="#{userBean.profileLink}#{item.uploaderScreenName}/profile">
+						<h:outputText escape="false" value="#{item.uploader}" />
+					    </h:outputLink></td>
+					    <td style="width: 1%;"></td>
+					    <td style="width: 11.5%;">
+					    <h:outputText escape="false" value="#{item.lastModifiedDate}" /></td>
+					    <td style="width: 1%;"></td>
+					    <td style="width: 20%;">
+						<ul>
+						    <li>
+							<h:outputLink value="#{userBean.editMetadataLink}#{item.pid}/metadata">Edit Metadata</h:outputLink>
+						    </li>
+						    <li>
+							<h:outputLink value="#{userBean.editMetadataLink}#{item.pid}/upload">Add/Update Existing Dataset</h:outputLink>
+						    </li>
+							<li>
+							    <h:commandLink 	id="assignreviewer"
+										action="#{item.doAssignReviewer}">
+								<h:outputText value="Assign Reviewer" />
+								<f:setPropertyActionListener value="#{item.selectedReviewer}"
+											    target="#{item.assignedReviewer}"/>
+							    </h:commandLink>
+							    <h:selectOneMenu value="#{item.selectedReviewer}" >
+								<f:selectItems value="#{userBean.listReviewersNames}" />
+							    </h:selectOneMenu>
+							</li>
+						    <li>
+							<h:commandLink 	id="delete"
+								    action="#{item.doDelete}"
+								    onclick="if (!confirm('Are you sure you want to remove \'#{item.modsTitleEscaped}\'?')) return false">
+							    <h:outputText value="Remove Dataset from repository" />
+							</h:commandLink>
+						    </li>
+						</ul></td>
+					</tr>
+					<tr>
+					    <td colspan="9"><hr/></td>
+					</tr>
+					</ui:fragment>
+				    </ui:fragment>
+
+				    </ui:repeat>
+				</table>
+				<!-- Paging -->
+				<!-- First Page -->
+				<ui:fragment rendered="#{userBean.currentPage gt 1}">
+				    <h:commandLink id="FirstRev" action="#{userBean.doReload}">
+					<h:outputText value="First " />
+					<f:setPropertyActionListener target="#{userBean.currentPage}"
+								     value="1" />
+				    </h:commandLink>
+				</ui:fragment>
+				<h:outputText value="First"
+					      rendered="#{userBean.currentPage le 1}" />
+				<!-- Previous Page -->
+				<ui:fragment rendered="#{userBean.currentPage gt 1}">
+				    <h:commandLink id="PreviousRev" action="#{userBean.doReload}">
+					<h:outputText value="Previous " />
+					<f:setPropertyActionListener target="#{userBean.currentPage}"
+								     value="#{userBean.currentPage-1}" />
+				    </h:commandLink>
+				</ui:fragment>
+				<h:outputText value="Previous"
+					      rendered="#{userBean.currentPage le 1}" />
+				<!-- Page Numbers -->
+				<ui:repeat value="#{userBean.pageIndex}" var="i">
+				    <ui:fragment rendered="#{i ne userBean.currentPage}">
+					<h:commandLink id="Page#{i}Rev" action="#{userBean.doReload}">
+					    <h:outputText value="#{i} " />
+					    <f:setPropertyActionListener target="#{userBean.currentPage}"
+									 value="#{i}" />
+					</h:commandLink>
+				    </ui:fragment>
+				    <h:outputText value="#{i} "
+						  rendered="#{i eq userBean.currentPage}" />
+				</ui:repeat>
+				<!-- Next Page -->
+				<ui:fragment
+				    rendered="#{userBean.currentPage lt userBean.totalPages}">
+				    <h:commandLink id="NextRev" action="#{userBean.doReload}">
+					<h:outputText value="Next " />
+					<f:setPropertyActionListener target="#{userBean.currentPage}"
+								     value="#{userBean.currentPage+1}" />
+				    </h:commandLink>
+				</ui:fragment>
+				<h:outputText value="Next"
+					      rendered="#{userBean.currentPage ge userBean.totalPages}" />
+				<!-- Last Page -->
+				<ui:fragment
+				    rendered="#{userBean.currentPage lt userBean.totalPages}">
+				    <h:commandLink id="LastRev" action="#{userBean.doReload}">
+					<h:outputText value="Last " />
+					<f:setPropertyActionListener target="#{userBean.currentPage}"
+								     value="#{userBean.totalPages}" />
+				    </h:commandLink>
+				</ui:fragment>
+				<h:outputText value="Last"
+					      rendered="#{userBean.currentPage ge userBean.totalPages}" />
+			    </ui:fragment>
+			    <!-- above is the rendered section for returned results, below for no results-->
+			    <ui:fragment rendered="#{userBean.numOfCurrentTabResults eq 0}">
+				<div style="font-weight: bold; display: inline">
+				    <h:outputText value="No results found" />
+				</div>
+			    </ui:fragment>
+			</ui:fragment>
+			<ui:fragment rendered="#{userBean.currentTab eq 5}">
+			    <table style="width: 100%" border="0">
+				    <!-- Column headers -->
+				    <thead>
+					<tr>
+					    <th>Dataset</th>
+					    <th>&#160;</th>
+					    <th>Status</th>
+					    <th>&#160;</th>
+					    <th>Uploader</th>
+					    <th>&#160;</th>
+					    <th>Date Modified</th>
+					    <th>&#160;</th>
+					    <th>Actions</th>
+					</tr>
+				    </thead>
+				    <ui:repeat value="#{userBean.reviewableSearchResults}" var="item">
+					<!-- Fragment for RedOrange item only -->
+					<ui:fragment rendered="#{item.category eq 'redorange'}">
+					    <ui:fragment rendered="#{item.reviewerName ne 'noreviewer'}">
+					    <tr>
+						<td style="width: 42.5%;">
+					    <h:outputLink value="#{item.datasetdisplayURL}">
+						<h:outputText escape="false" value="#{item.modsTitle}" />
+					    </h:outputLink>
+					    <br/>
+					    <h:outputText escape="false" value="#{item.modsAbstract}" />
+					    <br />
+					    <h:outputText escape="false" value="Keywords: " />
+					    <h:outputText escape="false" value="#{item.modsSubjectTopic}" /></td>
+					    <td style="width: 1%;"></td>
+					    <td style="width: 11.5%;">
+					    <h:graphicImage id="status2" value="#{item.statusImgURL}" title="#{item.status}" /></td>
+					    <td style="width: 1%;"></td>
+					    <td style="width: 11.5%;">
+					    <h:outputLink value="#{userBean.profileLink}#{item.uploaderScreenName}/profile">
+						<h:outputText escape="false" value="#{item.uploader}" />
+					    </h:outputLink></td>
+					    <td style="width: 1%;"></td>
+					    <td style="width: 11.5%;">
+					    <h:outputText escape="false" value="#{item.lastModifiedDate}" /></td>
+					    <td style="width: 1%;"></td>
+					    <td style="width: 20%;">
+						<ul>
+						    <li>
+							<h:commandLink 	id="assigndoi" action="#{item.doRequestDOI}">
+							    <f:setPropertyActionListener target="#{userBean.workingPid}" value="#{item.pid}" />
+							    <h:outputText value="Assign DOI" />
+							</h:commandLink>
+						    </li>
+						</ul></td>
+					</tr>
+					<tr>
+					    <td colspan="9"><hr/></td>
+					</tr>
+					</ui:fragment>
+				    </ui:fragment>
+				    </ui:repeat>
+				</table>
+			</ui:fragment>
+		    </ui:fragment>
+		</div>
+	    </div>
+
+	    <style type="text/css">
+		.colStyle1 {
+		    width: 160px;
+		}
+
+		.colStyle2 {
+		    width: 20px;
+		}
+
+		.colStyle3 {
+
+		}
+
+		.aui-tabview-content-border {
+		    border: 1px solid #c8c9ca;
+		    padding: 4px;
+		}
+	    </style>
+	</div>
+    </h:form>
+</div>

@@ -1,0 +1,153 @@
+<div
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+    <h:form id="searchForm">           
+    	<div class="dataset">
+    		<div class="dataset-details">
+		    	<div class="dataset-tabs-container">
+					<div class="dataset-tab dataset-tab-selected">
+		               <div>
+		                 <span class="dataset-tab-text">All Datasets</span>
+		               </div>
+		             </div>
+		             <div class="dataset-tab">
+		               <div>
+		                 <span class="dataset-tab-text">Red Datasets</span>
+		               </div>
+		             </div>
+		             <div class="dataset-tab">
+		               <div>
+		                 <span class="dataset-tab-text">Orange Datasets</span>
+		               </div>
+		             </div>
+		             <div class="dataset-tab">
+		               <div>
+		                 <span class="dataset-tab-text">Green Datasets</span>
+		               </div>
+		             </div>
+		        </div>
+		        <div class="dataset-body">
+	                <div class="dataset-header">
+	                  <div class="dataset-header-text">&#160;</div>
+	                </div>
+	                <div class="dataset-content">
+	               		<div class="dataset-content-item"> 	               			
+		                    <ui:fragment rendered="#{userBean.numOfCurrentTabResults != 0}">		                    
+		                        <!-- There are some results -->
+		                        <table style="width:100%">	                                
+									<!-- Column headers -->	       
+									<thead>
+										<tr>
+									      <th>Dataset</th>									      
+									      <th>Status</th>
+								      	  <th>&#160;</th>
+								      	  <th>Date Modified</th>
+								      	  <th>&#160;</th>								      									      
+									      <th>Actions</th>
+									    </tr>
+									</thead>
+			                        <ui:repeat value="#{userBean.searchResults}" var="item">
+			                            <!-- Fragment for Dataset item only -->                            
+			                            <ui:fragment rendered="#{item.doctype=='4'}">                                		                                								
+	                                		<tr>
+	                                			<td style="width:57.5%;">
+													<h:outputLink value="#{item.datasetArticleURL}">
+														<h:outputText escape="false" value="#{item.modsTitle}"/>
+													</h:outputLink>
+				                                    <br/>
+				                                    <h:outputText escape="false" value="#{item.modsAbstract}"/>
+				                                    <br/>
+				                                    <h:outputText escape="false" value="Keywords: "/>
+				                                    <h:outputText escape="false" value="#{item.modsSubjectTopic}"/>
+			                                    </td>
+			                                    <td style="width:5%;">			                                    			                                    	
+			                                    <h:graphicImage id="status" value="http://new.freshwaterlife.org/datasets-management-portlet/images/#{item.statusImgURL}" title="#{item.status}" /> 		                            				                                    
+		                                    	</td>
+		                                    	<td style="width:2.5%;">
+		                                    	</td>
+		                                    	<td style="width:12.5%;">			                                    	                               
+			                                    <h:outputText escape="false" value="01/01/2011"/>			                                    	
+		                                    	</td>
+		                                    	<td style="width:2.5%;">
+		                                    	</td>
+			                                    <td style="width:20%;">
+			                                    	<ul>		                                    		                                    	
+				                                    <li><h:outputLink value="#{item.datasetArticleURL}">View Metadata</h:outputLink></li>				                                    
+				                                	<li><h:outputLink value="#" 
+				                                		onclick="if (!confirm('Are you sure you want to request #{item.modsTitle}?')) return false">
+				                                		Request Dataset</h:outputLink></li>			                                					                                
+				                                	</ul>
+			                                	</td>
+		                                	</tr>		                                	
+			                            </ui:fragment>
+			                        </ui:repeat> 
+		                        </table>                       		                        		                        
+		                        <!-- Paging -->
+		                        <!-- First Page -->
+		                        <span style="margin-right:15px;"></span>
+		                        <ui:fragment rendered="#{userBean.currentPage gt 1}">
+		                            <h:commandLink id="First" action="#{userBean.doReload}">
+		                                <h:outputText value="First " />
+		                                <f:setPropertyActionListener target="#{userBean.currentPage}" value="1" />
+		                            </h:commandLink>
+		                        </ui:fragment>
+		                        <h:outputText value="First" rendered="#{userBean.currentPage le 1}" />
+		
+		                        <!-- Previous Page -->
+		                        <ui:fragment rendered="#{userBean.currentPage gt 1}">
+		                            <h:commandLink id="Previous" action="#{userBean.doReload}">
+		                                <h:outputText value="Previous " />
+		                                <f:setPropertyActionListener target="#{userBean.currentPage}" value="#{userBean.currentPage-1}" />
+		                            </h:commandLink>
+		                        </ui:fragment>
+		                        <h:outputText value="Previous" rendered="#{userBean.currentPage le 1}" />
+		
+		                        <!-- Page Numbers -->
+		                        <ui:repeat value="#{userBean.pageIndex}" var="i">
+		                            <ui:fragment rendered="#{i ne userBean.currentPage}">
+		                                <h:commandLink id="Page#{i}" action="#{userBean.doReload}">
+		                                    <h:outputText value="#{i} " />
+		                                    <f:setPropertyActionListener target="#{userBean.currentPage}" value="#{i}" />
+		                                </h:commandLink>
+		                            </ui:fragment>
+		                            <h:outputText value="#{i} " rendered="#{i eq userBean.currentPage}" />
+		                        </ui:repeat>
+		
+		                        <!-- Next Page -->
+		                        <ui:fragment rendered="#{userBean.currentPage lt userBean.totalPages}">
+		                            <h:commandLink id="Next" action="#{userBean.doReload}">
+		                                <h:outputText value="Next " />
+		                                <f:setPropertyActionListener target="#{userBean.currentPage}" value="#{userBean.currentPage+1}" />
+		                            </h:commandLink>
+		                        </ui:fragment>
+		                        <h:outputText value="Next" rendered="#{userBean.currentPage ge userBean.totalPages}" />
+		
+		                        <!-- Last Page -->
+		                        <ui:fragment rendered="#{userBean.currentPage lt userBean.totalPages}">
+		                            <h:commandLink id="Last" action="#{userBean.doReload}">
+		                                <h:outputText value="Last " />
+		                                <f:setPropertyActionListener target="#{userBean.currentPage}" value="#{userBean.totalPages}" />
+		                            </h:commandLink>
+		                        </ui:fragment>
+		                        <h:outputText value="Last" rendered="#{userBean.currentPage ge userBean.totalPages}" />		                        
+		                    </ui:fragment>		                    
+		
+		                    <!-- above is the rendered section for returned results, below for no results-->
+		                    <ui:fragment rendered="#{userBean.numOfCurrentTabResults == 0}">
+		                        <div style="font-weight: bold; display: inline">
+		                            <span style="margin-right:15px;"></span><h:outputText value="No datasets found. Please sign in to FreshwaterLife"/>
+		                        </div>
+		                    </ui:fragment>
+		                    <br/>
+		                    <br/>				                
+	               		</div>
+	                </div>                
+				</div>
+			</div>
+		</div>                        
+    </h:form>
+</div>

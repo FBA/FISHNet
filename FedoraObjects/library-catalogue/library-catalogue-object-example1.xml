@@ -1,0 +1,144 @@
+<foxml:digitalObject xmlns:foxml="info:fedora/fedora-system:def/foxml#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="1.1" xsi:schemaLocation="info:fedora/fedora-system:def/foxml# http://www.fedora.info/definitions/1/0/foxml1-1.xsd" PID="Library:15ad3ebdf-f237-42a0-92a8-1e67e45bddda">
+  <foxml:objectProperties>
+    <foxml:property NAME="info:fedora/fedora-system:def/model#state" VALUE="A" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#label" VALUE="FBA Library Catalogue Object" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#ownerId" VALUE="fedoraAdmin" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#createdDate" VALUE="2010-11-23T12:37:42.015Z" />
+    <foxml:property NAME="info:fedora/fedora-system:def/view#lastModifiedDate" VALUE="2010-11-23T12:37:42.015Z" />
+  </foxml:objectProperties>
+  <foxml:datastream CONTROL_GROUP="X" ID="DC" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2010-11-23T12:37:42.015Z" FORMAT_URI="http://www.openarchives.org/OAI/2.0/oai_dc/" ID="DC1.0" LABEL="Dublin Core Record for this object" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+          <dc:title>Library Catalogue Object</dc:title>
+          <dc:identifier>Library:15ad3ebdf-f237-42a0-92a8-1e67e45bddda</dc:identifier>
+        </oai_dc:dc>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream CONTROL_GROUP="X" ID="RELS-EXT" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2010-11-23T12:37:42.015Z" FORMAT_URI="info:fedora/fedora-system:FedoraRELSExt-1.0" ID="RELS-EXT1.0" LABEL="RDF Statements about this object" MIMETYPE="application/rdf+xml">
+      <foxml:xmlContent>
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:fedora-model="info:fedora/fedora-system:def/model#">
+          <rdf:Description rdf:about="info:fedora/Library:15ad3ebdf-f237-42a0-92a8-1e67e45bddda">
+            <fedora-model:hasModel rdf:resource="info:fedora/LibraryConfig:CONTENT-MODEL" />
+          </rdf:Description>
+        </rdf:RDF>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream ID="descMetadata" STATE="A" CONTROL_GROUP="X">
+    <foxml:datastreamVersion ID="descMetaData1.0" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
+          <mods:recordInfo>
+        <mods:recordIdentifier>81215</mods:recordIdentifier>
+        <mods:recordCreationDate>JUL92</mods:recordCreationDate>
+        <mods:recordContentSource>FBA Library Catalogue</mods:recordContentSource>
+        <mods:recordOrigin>Record transformed into MODS from an FBA Library Catlaogue record using a style sheet available at http://xxx. Metadata originally created in a locally defined record format called Document Type A</mods:recordOrigin>
+    </mods:recordInfo>
+    <mods:name type="personal">
+        <mods:namePart>Argus G.W.</mods:namePart>
+    </mods:name>
+    <mods:name type="personal">
+        <mods:namePart>Elliott J.M.</mods:namePart>
+    </mods:name>
+    <mods:name type="corporate">
+        <mods:namePart>FAO.</mods:namePart>
+    </mods:name>
+    <mods:name type="corporate">
+        <mods:namePart>Indo-Pacific Fishery Commission.</mods:namePart>
+    </mods:name>
+    <mods:name>
+        <mods:role>
+            <mods:roleTerm type="text">ed</mods:roleTerm>
+        </mods:role>
+    </mods:name>
+    <mods:titleInfo>
+        <mods:title>The phytogeography of rare vascular plants in Ontario and its bearing on plant conservation</mods:title>
+    </mods:titleInfo>
+    <mods:note type="source characteristics">See also erratum, 46(2) p628</mods:note>
+    <mods:location>
+        <mods:physicalLocation>Windermere</mods:physicalLocation>
+        <mods:shelfLocator>C1.7A(227)</mods:shelfLocator>
+    </mods:location>
+    <mods:location>
+        <mods:physicalLocation>Windermere</mods:physicalLocation>
+        <mods:shelfLocator>D8.4(128)</mods:shelfLocator>
+    </mods:location>
+    <mods:location>
+        <mods:physicalLocation>Dorset</mods:physicalLocation>
+        <mods:shelfLocator>E3.28(191)</mods:shelfLocator>
+    </mods:location>
+    <mods:location>
+        <mods:physicalLocation>Dorset</mods:physicalLocation>
+        <mods:shelfLocator>597</mods:shelfLocator>
+    </mods:location>
+    <mods:subject>
+        <mods:geographic>Scotland: inland waters</mods:geographic>
+    </mods:subject>
+    <mods:subject>
+        <mods:geographic>Central: Chon Loch</mods:geographic>
+    </mods:subject>
+    <mods:subject>
+        <mods:name type="corporate">
+            <mods:namePart>Scotland</mods:namePart>
+        </mods:name>
+    </mods:subject>
+    <mods:subject>
+        <mods:name type="corporate">
+            <mods:namePart>British Isles</mods:namePart>
+        </mods:name>
+    </mods:subject>
+    <mods:subject authority="local">
+        <mods:topic>3C3</mods:topic>
+    </mods:subject>
+    <mods:subject ID="_3C3">
+        <mods:topic>Higher plants</mods:topic>
+        <mods:topic>Distribution</mods:topic>
+        <mods:topic>Flowering plants</mods:topic>
+    </mods:subject>
+    <mods:subject authority="local">
+        <mods:topic>9G3</mods:topic>
+    </mods:subject>
+    <mods:subject ID="_9G3">
+        <mods:topic>Conservation</mods:topic>
+        <mods:topic>Ecological</mods:topic>
+    </mods:subject>
+    <mods:identifier type="local">R</mods:identifier>
+    <mods:identifier type="local">BL</mods:identifier>
+    <mods:identifier type="doi">???</mods:identifier>
+    <mods:originInfo>
+        <mods:issuance>monographic</mods:issuance>
+    </mods:originInfo>
+    <mods:genre>journal article</mods:genre>
+    <mods:relatedItem type="host">
+        <mods:originInfo>
+            <mods:issuance>serial</mods:issuance>
+            <mods:dateIssued>1992</mods:dateIssued>
+        </mods:originInfo>
+        <mods:titleInfo>
+            <mods:title>Canadian Journal of Botany</mods:title>
+        </mods:titleInfo>
+        <mods:part>
+            <mods:detail type="volume">
+                <mods:number>70</mods:number>
+            </mods:detail>
+            <mods:detail type="part">
+                <mods:number>3/4</mods:number>
+            </mods:detail>
+            <mods:extent unit="pages">
+                <mods:list>469-490</mods:list>
+            </mods:extent>
+            <mods:extent>
+                <mods:list>+ plates</mods:list>
+            </mods:extent>
+        </mods:part>
+    </mods:relatedItem>
+    <mods:identifier type="isbn">9051030916</mods:identifier>
+    <mods:note type="version identification">2 Copies</mods:note>
+        </mods:mods>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+</foxml:digitalObject>

@@ -1,0 +1,287 @@
+<foxml:digitalObject xmlns:foxml="info:fedora/fedora-system:def/foxml#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="1.1" xsi:schemaLocation="info:fedora/fedora-system:def/foxml# http://www.fedora.info/definitions/1/0/foxml1-1.xsd" PID="Dataset:825c83a0-0764-11e0-81e0-0800200c9a66">
+  <foxml:objectProperties>
+    <foxml:property NAME="info:fedora/fedora-system:def/model#state" VALUE="A" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#label" VALUE="FISHNet Dataset" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#ownerId" VALUE="fedoraAdmin" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#createdDate" VALUE="2010-12-14T09:29:12.017Z" />
+    <foxml:property NAME="info:fedora/fedora-system:def/view#lastModifiedDate" VALUE="2010-12-14T09:29:12.017Z" />
+  </foxml:objectProperties>
+  <foxml:datastream CONTROL_GROUP="X" ID="DC" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2010-12-14T09:29:12.017Z" FORMAT_URI="http://www.openarchives.org/OAI/2.0/oai_dc/" ID="DC1.0" LABEL="Dublin Core Record for this object" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+          <dc:title>FISHNet Dataset</dc:title>
+          <dc:identifier>Dataset:825c83a0-0764-11e0-81e0-0800200c9a66</dc:identifier>
+        </oai_dc:dc>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream CONTROL_GROUP="X" ID="RELS-EXT" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2010-12-14T09:29:12.017Z" FORMAT_URI="info:fedora/fedora-system:FedoraRELSExt-1.0" ID="RELS-EXT1.0" LABEL="RDF Statements about this object" MIMETYPE="application/rdf+xml">
+      <foxml:xmlContent>
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:fedora-model="info:fedora/fedora-system:def/model#">
+          <rdf:Description rdf:about="info:fedora/Dataset:825c83a0-0764-11e0-81e0-0800200c9a66">
+            <fedora-model:hasModel rdf:resource="info:fedora/DatasetConfig:CONTENT-MODEL" />
+          </rdf:Description>
+        </rdf:RDF>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream ID="descMetadata" STATE="A" CONTROL_GROUP="X">
+    <foxml:datastreamVersion ID="descMetaData1.0" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
+          <!-- Copyright owner(s) -->
+          <mods:name>
+		    <mods:namePart>FBA</mods:namePart>
+		    <mods:role>
+			  <mods:roleTerm type="text">owner</mods:roleTerm>
+			</mods:role>
+		  </mods:name>
+		  <!-- Uploader -->
+		  <extension xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco">
+		    <gmd:contact>
+		      <gmd:CI_ResponsibleParty>
+		  	    <gmd:organisationName>
+		  	      <gco:CharacterString>mhaft</gco:CharacterString>
+		  	    </gmd:organisationName>
+			    <gmd:contactInfo>
+			      <gmd:CI_Contact>
+			        <gmd:phone>
+			          <gmd:CI_Telephone>
+			            <gmd:voice>
+			              <gco:CharacterString>01539487716</gco:CharacterString>
+			            </gmd:voice>
+			          </gmd:CI_Telephone>
+			        </gmd:phone>
+			        <gmd:address>
+			          <gmd:CI_Address>
+			            <gmd:electronicMailAddress>
+			              <gco:CharacterString>mhaft@fba.org.uk</gco:CharacterString>
+			            </gmd:electronicMailAddress>
+			          </gmd:CI_Address>
+			        </gmd:address>
+			      </gmd:CI_Contact>
+			    </gmd:contactInfo>
+			    <gmd:role>
+			      <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
+			    </gmd:role>
+		      </gmd:CI_ResponsibleParty>
+		    </gmd:contact>
+		  </extension>
+		  <mods:name>
+		    <mods:namePart>Dr Michael Haft</mods:namePart>
+		    <mods:role>
+			  <mods:roleTerm type="text">contact</mods:roleTerm>
+			</mods:role>
+		  </mods:name>
+		  <mods:note type="acquisition">FBA</mods:note>
+		  <mods:name>
+		    <mods:namePart>????????</mods:namePart>
+		    <mods:role>
+			  <mods:roleTerm type="text">creator</mods:roleTerm>
+			</mods:role>
+		  </mods:name>
+		  <mods:titleInfo>
+		    <mods:title>Daily Lake Level Measurements for Windermere</mods:title>
+		  </mods:titleInfo>
+		  <mods:abstract>Daily Lake Level Measurements for Windermere, data added daily from FBA site at ferry Landing on Lake Winderemre since 1950.</mods:abstract>
+		  <extension xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco">
+		    <gmd:dateStamp>
+		      <gco:DateTime>2010-01-01T11:15:30</gco:DateTime>
+		    </gmd:dateStamp>
+		  </extension>
+		  <extension xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco">
+		    <gmd:identificationInfo>
+		      <gmd:MD_DataIdentification>
+		        <gmd:topicCategory>
+		          <gmd:MD_TopicCategoryCode>????????</gmd:MD_TopicCategoryCode>
+		        </gmd:topicCategory>
+		        <gmd:extent>
+		          <gmd:EX_Extent>
+		            <gmd:geographicElement>
+		              <gmd:EX_GeographicBoundingBox>
+		                <gmd:westBoundLongitude>
+		                  <gco:Decimal>-8.14</gco:Decimal>
+		                </gmd:westBoundLongitude>
+		                <gmd:eastBoundLongitude>
+		                  <gco:Decimal>2.96</gco:Decimal>
+		                </gmd:eastBoundLongitude>
+		                <gmd:southBoundLatitude>
+		                  <gco:Decimal>49.79</gco:Decimal>
+		                </gmd:southBoundLatitude>
+		                <gmd:northBoundLatitude>
+		                  <gco:Decimal>60.77</gco:Decimal>
+		                </gmd:northBoundLatitude>
+		              </gmd:EX_GeographicBoundingBox>
+		            </gmd:geographicElement>
+		          </gmd:EX_Extent>
+		        </gmd:extent>
+		        <gmd:resourceMaintenance>
+		          <gmd:MD_MaintenanceInformation>
+		            <gmd:maintenanceAndUpdateFrequency>
+		              <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded">????????</gmd:MD_MaintenanceFrequencyCode>
+		            </gmd:maintenanceAndUpdateFrequency>
+		          </gmd:MD_MaintenanceInformation>
+		        </gmd:resourceMaintenance>
+		      </gmd:MD_DataIdentification>
+		    </gmd:identificationInfo>
+		  </extension>
+		  <mods:subject>
+		    <mods:topic>Lake level, Windermere, daily measurement</mods:topic>
+		  </mods:subject>
+		  <mods:subject>
+		    <mods:geographic>Windermere, Cumbria, Lake District</mods:geographic>
+		  </mods:subject>
+		  <extension xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco">
+		    <gmd:referenceSystemInfo>
+		      <gmd:MD_ReferenceSystem>
+		        <gmd:referenceSystemIdentifier>
+		          <gmd:RS_Identifier>
+		            <gmd:code>
+		              <gco:CharacterString>urn:ogc:def:crs:EPSG::4258</gco:CharacterString>
+		            </gmd:code>
+		          </gmd:RS_Identifier>
+		        </gmd:referenceSystemIdentifier>
+		      </gmd:MD_ReferenceSystem>
+		    </gmd:referenceSystemInfo>
+		  </extension>
+		  <mods:originInfo>
+		    <mods:dateOther point="start">1980-01-01T00:00:00</mods:dateOther>
+		    <mods:dateOther point="end">1985-01-01T00:00:00</mods:dateOther>
+		  </mods:originInfo>
+		  <mods:originInfo>
+		    <mods:dateIssued>1986-01-01T00:00:00</mods:dateIssued>
+		  </mods:originInfo>
+		  <extension xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco">
+		    <gmd:dataQualityInfo>
+		      <gmd:DQ_DataQuality>
+		        <gmd:scope>
+		          <gmd:DQ_Scope>
+		            <gmd:level>
+		              <gmd:MD_ScopeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
+		            </gmd:level>
+		          </gmd:DQ_Scope>
+		        </gmd:scope>
+		        <gmd:lineage>
+		          <gmd:LI_Lineage>
+		            <gmd:statement>
+		              <gco:CharacterString>Processes such as quality control</gco:CharacterString>
+		            </gmd:statement>
+		          </gmd:LI_Lineage>
+		        </gmd:lineage>
+		      </gmd:DQ_DataQuality>
+		    </gmd:dataQualityInfo>
+		  </extension>
+		  <mods:accessCondition type="restriction on access"></mods:accessCondition>
+		  <mods:accessCondition type="use and reproduction"></mods:accessCondition>
+		  <mods:identifier type="uri"></mods:identifier>
+		  <extension xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco">
+		    <gmd:hierarchyLevel>
+		      <gmd:MD_ScopeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
+		    </gmd:hierarchyLevel>
+		  </extension>
+		  <mods:language>
+		    <mods:languageTerm authority="ISO639-2b">eng</mods:languageTerm>
+		  </mods:language>
+		  <extension xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco">
+		    <gmd:identificationInfo>
+		      <gmd:MD_DataIdentification>
+		        <gmd:spatialResolution>
+		          <gmd:MD_Resolution>
+		            <gmd:distance>
+		              <gco:Distance uom="urn:ogc:def:uom:EPSG::9001">20</gco:Distance>
+		            </gmd:distance>
+		          </gmd:MD_Resolution>
+		        </gmd:spatialResolution>
+		      </gmd:MD_DataIdentification>
+		    </gmd:identificationInfo>
+		  </extension>
+		  <extension xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco">
+		    <gmd:distributionInfo>
+		      <gmd:MD_Distribution>
+		        <gmd:distributionFormat>
+		          <gmd:MD_Format>
+		            <gmd:name>
+		              <gco:CharacterString>Unknown</gco:CharacterString>
+		            </gmd:name>
+		            <gmd:version>
+		              <gco:CharacterString>Unknown</gco:CharacterString>
+		            </gmd:version>
+		          </gmd:MD_Format>
+		        </gmd:distributionFormat>
+		        <gmd:transferOptions>
+		          <gmd:MD_DigitalTransferOptions>
+		            <gmd:onLine>
+		              <gmd:CI_OnlineResource>
+		                <gmd:linkage>
+		                  <gmd:URL>http://ogc.bgs.ac.uk/dppp/wmc/digmap625.xml</gmd:URL>
+		                </gmd:linkage>
+		              </gmd:CI_OnlineResource>
+		            </gmd:onLine>
+		          </gmd:MD_DigitalTransferOptions>
+		        </gmd:transferOptions>
+		      </gmd:MD_Distribution>
+		    </gmd:distributionInfo>
+		  </extension>
+		  <extension xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco">
+		    <gmd:language>
+		      <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="eng">eng</gmd:LanguageCode>
+		    </gmd:language>
+		  </extension>
+		  <extension xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco">
+		    <gmd:dataQualityInfo>
+		      <gmd:DQ_DataQuality>
+		        <gmd:scope>
+		          <gmd:DQ_Scope>
+		            <gmd:level>
+		              <gmd:MD_ScopeCode codeListValue="service" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_ScopeCode">service</gmd:MD_ScopeCode>
+		            </gmd:level>
+		            <gmd:levelDescription>
+		              <gmd:MD_ScopeDescription>
+		                <gmd:other>
+		                  <gco:CharacterString>Geographic web service</gco:CharacterString>
+		                </gmd:other>
+		              </gmd:MD_ScopeDescription>
+		            </gmd:levelDescription>
+		          </gmd:DQ_Scope>
+		        </gmd:scope>
+		        <gmd:report>
+		          <gmd:DQ_DomainConsistency>
+		            <gmd:result>
+		              <gmd:DQ_ConformanceResult>
+		                <gmd:specification>
+		                  <gmd:CI_Citation>
+		                    <gmd:title>
+		                      <gco:CharacterString>Service Abstract Test Suite</gco:CharacterString>
+		                    </gmd:title>
+		                    <gmd:date>
+		                      <gmd:CI_Date>
+		                        <gmd:date>
+		                          <gco:Date>2007-11-21</gco:Date>
+		                        </gmd:date>
+		                        <gmd:dateType>
+		                          <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmx Codelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
+		                        </gmd:dateType>
+		                      </gmd:CI_Date>
+		                    </gmd:date>
+		                  </gmd:CI_Citation>
+		                </gmd:specification>
+		                <gmd:explanation>
+		                  <gco:CharacterString>See the referenced specification</gco:CharacterString>
+		                </gmd:explanation>
+		                <gmd:pass>
+		                  <gco:Boolean>true</gco:Boolean>
+		                </gmd:pass>
+		              </gmd:DQ_ConformanceResult>
+		            </gmd:result>
+		          </gmd:DQ_DomainConsistency>
+		        </gmd:report>
+		      </gmd:DQ_DataQuality>
+		    </gmd:dataQualityInfo>
+		  </extension>
+        </mods:mods>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+</foxml:digitalObject>

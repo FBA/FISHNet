@@ -1,0 +1,24 @@
+README
+
+Where to put the files for the FwL OpenSSO Skin
+
+/opensso/config/auth/default
+* login_failed_template.jsp
+* Login.jsp
+* Logout.jsp
+* session_timeout.jsp
+* DataStore.xml
+
+/opensso/js
+* contents of 'js' folder
+
+/opensso/images
+* info.png
+* error.png
+* important.png
+
+/opensso/css
+* css/theme.css
+
+/opensso/images/fwl
+* contents of 'images' folder

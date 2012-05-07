@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+
+    <lst name="responseHeader">
+        <int name="status">0</int>
+        <int name="QTime">23</int>
+        <lst name="params">
+            <str name="indent">on</str>
+            <str name="start">0</str>
+
+            <str name="q">mayfly</str>
+            <str name="rows">10</str>
+            <str name="version">2.2</str>
+        </lst>
+    </lst>
+    <result name="response" numFound="14" start="0">
+        <doc>
+            <arr name="content">
+                <str>Ephemeropteran (mayfly) sub-imago expanding wings</str>
+            </arr>
+
+            <arr name="doctype">
+                <str>image</str>
+            </arr>
+            <arr name="name">
+                <str>Ephemeropteran emerging</str>
+            </arr>
+            <arr name="summary">
+                <str/>
+            </arr>
+            <arr name="tagsentries">
+                <str>Emergence;Invertebrates;Ephemeroptera;Mayfly</str>
+            </arr>
+            <arr name="thumbid">
+                <int>4489</int>
+            </arr>
+            <arr name="uid">
+                <str>4487</str>
+            </arr>
+
+        </doc>
+        <doc>
+            <arr name="content">
+                <str>Recently emerged adult mayfly showing wings almost fully expanded.</str>
+            </arr>
+            <arr name="doctype">
+                <str>image</str>
+            </arr>
+            <arr name="name">
+                <str>Ephemeroptera mayfly  adult</str>
+            </arr>
+            <arr name="summary">
+                <str/>
+            </arr>
+            <arr name="tagsentries">
+                <str>Beetle;Invertebrates;Emergence;Ephemeroptera;Mayfly</str>
+            </arr>
+
+            <arr name="thumbid">
+                <int>4473</int>
+            </arr>
+            <arr name="uid">
+                <str>4471</str>
+            </arr>
+        </doc>
+        <doc>
+            <arr name="content">
+                <str>Photo of early instar of mayfly larva -  showing 3 'tails' and gills along the abdomen.</str>
+            </arr>
+            <arr name="doctype">
+                <str>image</str>
+            </arr>
+            <arr name="name">
+                <str>Ephemeroptera larva</str>
+            </arr>
+
+            <arr name="summary">
+                <str/>
+            </arr>
+            <arr name="tagsentries">
+                <str>Ephemeroptera;Gills;Mayfly</str>
+            </arr>
+            <arr name="thumbid">
+                <int>4477</int>
+            </arr>
+            <arr name="uid">
+                <str>4475</str>
+            </arr>
+        </doc>
+        <doc>
+            <arr name="content">
+                <str>This picture shows a mayfly larva from the genus [i]Ecdyonurus[/i] on a leaf. This specimen was taken in a kick-sample from grid ref. SD5396995664.</str>
+            </arr>
+
+            <arr name="doctype">
+                <str>image</str>
+            </arr>
+            <arr name="name">
+                <str>[i]Ecdyonurus[/i] (larva)</str>
+            </arr>
+            <arr name="tagsentries">
+                <str>Ecdyonurus;Mayfly;Ephemeroptera;Larva;Nymph;Simon Pawley</str>
+            </arr>
+            <arr name="thumbid">
+                <int>4344</int>
+            </arr>
+            <arr name="uid">
+                <str>4342</str>
+            </arr>
+        </doc>
+
+        <doc>
+            <arr name="content">
+                <str>Mayfly larva of the [i]Ecdyonurus[/i] genus on a white background. Highlighted are some diagnostic identification characteristics and short notes on the ecology of this genus. This specimen was taken from the River Dove at Dove Dale.</str>
+            </arr>
+            <arr name="doctype">
+                <str>image</str>
+            </arr>
+            <arr name="name">
+                <str>[i]Ecdyonurus torrentis/dispar/venosus[/i] (larva)</str>
+            </arr>
+            <arr name="thumbid">
+                <int>4654</int>
+            </arr>
+            <arr name="uid">
+                <str>4652</str>
+            </arr>
+
+        </doc>
+        <doc>
+            <arr name="companyId">
+                <str>1</str>
+            </arr>
+            <arr name="content">
+                <str>Life cycles When you look at the living things in a pond or stream you will see animals at different stages of development.  They are at different stages in their Life Cycle. The first stage is an egg.  This hatches into a larva.  The larva of most insects grows slowly into the adult.  The adult is able to reproduce. After reproduction the adult insect usually dies. Some animals such as water snails and leeches spend their whole life cycle in the water.  Others, such as mayflies and dragonflies, spend their adult stage out of the water. Use the key to find out why adult mayflies and dragonflies live out of water. We will now look at the stages of development in more detail.</str>
+            </arr>
+            <arr name="doctype">
+                <str>liferay doc</str>
+            </arr>
+            <arr name="entryClassName">
+                <str>com.liferay.portlet.journal.model.JournalArticle</str>
+            </arr>
+            <arr name="entryClassPK">
+                <str>11933</str>
+            </arr>
+
+            <arr name="groupId">
+                <str>14</str>
+            </arr>
+            <arr name="modified">
+                <str>20090324130400</str>
+            </arr>
+            <arr name="portletId">
+                <str>15</str>
+            </arr>
+            <arr name="title">
+                <str>KS2Life1</str>
+            </arr>
+            <arr name="type">
+                <str>general</str>
+            </arr>
+            <arr name="uid">
+                <str>15_PORTLET_11933</str>
+            </arr>
+
+            <arr name="version">
+                <str>1.0</str>
+            </arr>
+        </doc>
+        <doc>
+            <arr name="companyId">
+                <str>1</str>
+            </arr>
+            <arr name="content">
+                <str>Adults: The adult stage of the animal's life is short compared to its larval stage: the main role of the adult is to find a mate and reproduce. For example, adult mayflies live for only 1 - 2 days compared to their larval stage that lasts several months. Adult pond and stream invertebrates lay their eggs in different ways. Some mayflies crawl beneath the water surface to lay their eggs, whilst others lay them on the surface of the water. Many adult freshwater invertebrates die soon after mating and egg laying. Once the eggs have been laid the cycle begins again.</str>
+            </arr>
+            <arr name="doctype">
+                <str>liferay doc</str>
+            </arr>
+            <arr name="entryClassName">
+                <str>com.liferay.portlet.journal.model.JournalArticle</str>
+            </arr>
+
+            <arr name="entryClassPK">
+                <str>11962</str>
+            </arr>
+            <arr name="groupId">
+                <str>14</str>
+            </arr>
+            <arr name="modified">
+                <str>20090324135800</str>
+            </arr>
+            <arr name="portletId">
+                <str>15</str>
+            </arr>
+            <arr name="title">
+                <str>KS2Life5</str>
+            </arr>
+            <arr name="type">
+                <str>general</str>
+            </arr>
+
+            <arr name="uid">
+                <str>15_PORTLET_11962</str>
+            </arr>
+            <arr name="version">
+                <str>1.0</str>
+            </arr>
+        </doc>
+        <doc>
+            <arr name="companyId">
+                <str>1</str>
+            </arr>
+            <arr name="content">
+                <str>Adults: The adult stage of the animal's life is short compared to its larval stage: the main role of the adult is to find a mate and reproduce. For example, mayflies live as adults for 1 - 2 days only compared to their larval stage that lasts several months. Adult pond and stream animals lay their eggs in different ways. Some mayflies crawl beneath the water surface to lay their eggs, whilst others lay them on the surface of the water. Many adult freshwater animals die soon after mating and egg laying. Once the eggs have been laid the cycle begins again.</str>
+            </arr>
+            <arr name="doctype">
+                <str>liferay doc</str>
+            </arr>
+
+            <arr name="entryClassName">
+                <str>com.liferay.portlet.journal.model.JournalArticle</str>
+            </arr>
+            <arr name="entryClassPK">
+                <str>12394</str>
+            </arr>
+            <arr name="groupId">
+                <str>14</str>
+            </arr>
+            <arr name="modified">
+                <str>20090324155100</str>
+            </arr>
+            <arr name="portletId">
+                <str>15</str>
+            </arr>
+            <arr name="title">
+                <str>KS3Cycles5</str>
+            </arr>
+
+            <arr name="type">
+                <str>general</str>
+            </arr>
+            <arr name="uid">
+                <str>15_PORTLET_12394</str>
+            </arr>
+            <arr name="version">
+                <str>1.0</str>
+            </arr>
+        </doc>
+        <doc>
+            <arr name="content">
+                <str>Order; Odonata, Sub-order; Anisoptera. A view from above of an aquatic larva of a species of dragonfly. Dragonfly larva lack the conspicuous tails of the related damsels. This species is a dull colour which provides camouflage against the sediment. The larval stage of some dragonfly species can extend for more than one year, unlike larvae of mayflies and stoneflies.</str>
+            </arr>
+            <arr name="doctype">
+                <str>image</str>
+            </arr>
+
+            <arr name="name">
+                <str>Dragonfly aquatic larva</str>
+            </arr>
+            <arr name="summary">
+                <str/>
+            </arr>
+            <arr name="tagsentries">
+                <str>Robert Petley Jones</str>
+            </arr>
+            <arr name="thumbid">
+                <int>3563</int>
+            </arr>
+            <arr name="uid">
+                <str>3561</str>
+            </arr>
+        </doc>
+        <doc>
+
+            <arr name="content">
+                <str>Order; Odonata, Sub-order; Anisoptera. A view from above of an aquatic larva of a species of dragonfly. Dragonfly larva lack the conspicuous tails of the related damsels. This species is a dull colour which provides camouflage against the sediment. The larval stage of some dragonfly species can extend for more than one year, unlike larvae of mayflies and stoneflies.</str>
+            </arr>
+            <arr name="doctype">
+                <str>image</str>
+            </arr>
+            <arr name="name">
+                <str>Dragonfly aquatic larva (2)</str>
+            </arr>
+            <arr name="summary">
+                <str/>
+            </arr>
+            <arr name="tagsentries">
+                <str>Odonata;Anisoptera;Aquatic larva;Dragonfly;Invertebrate;Robert Petley Jones</str>
+            </arr>
+            <arr name="thumbid">
+                <int>3567</int>
+            </arr>
+
+            <arr name="uid">
+                <str>3565</str>
+            </arr>
+        </doc>
+    </result>
+</response>

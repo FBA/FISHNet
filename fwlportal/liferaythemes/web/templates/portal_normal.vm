@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+#parse ($init)
+
+<html dir="#language ("lang.dir")" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>$company_name - $the_title</title>
+
+	$theme.include($top_head_include)
+
+	#css ($css_main_file)
+
+	<script type="text/javascript">
+		// <![CDATA[
+			$page_javascript_1
+			$page_javascript_2
+			$page_javascript_3
+		// ]]>
+	</script>
+
+	#if ($company_logo != "")
+		<style type="text/css">
+			/* <![CDATA[ */
+				#banner .logo a {
+					background: url($company_logo) no-repeat;
+					display: block;
+					font-size: 0;
+					height: ${company_logo_height}px;
+					text-indent: -9999em;
+					width: ${company_logo_width}px;
+				}
+
+				#ie6_png_fix()
+			/* ]]> */
+		</style>
+	#end
+</head>
+
+<body class="$css_class">
+
+$theme.include($top_messages_include)
+
+<div id="wrapper">
+	<div id="banner">
+	     <div id="masthead">
+		<h1 class="logo">
+			<a class="png" href="$company_url">$company_name</a>
+
+			<span class="current-community">
+				$community_name
+			</span>
+		</h1>
+		
+		#parse ("$full_templates_path/FwLMasthead.txt")
+		
+		<a href="http://www.fba.org.uk" target="_blank" title="Freshwaterlife is housed by the Freshwater Biological Association" id="fba-logo"><span>Freshwater Biological Association</span></a>
+		
+		
+		#if ($themeDisplay.isSignedIn())
+			#parse ("$full_templates_path/dock.vm")
+		#end
+
+		#if ($update_available_url)
+			<div class="popup-alert-notice">
+				<a class="update-available" href="$update_available_url">#language ("updates-are-available-for-liferay")</a>
+			</div>
+		#end
+	     </div>
+	</div>
+	
+	<div id="sectionHeader">
+	            <div id="headerContent">
+	                <h1 id="header1"><span>Freshwater<i>Life</i></span></h1>
+                	<h2 id="header2"><span>Providing easy access to a world of freshwater information</span></h2>
+
+	#if ($has_navigation)
+		#parse ("$full_templates_path/navigation.vm")
+	#end
+	
+	</div>
+
+	#if ($selectable)
+		$theme.include($content_include)
+	#else
+		$portletDisplay.recycle()
+
+		$portletDisplay.setTitle($the_title)
+
+		$theme.wrapPortlet("portlet.vm", $content_include)
+	#end
+
+	#parse ("$full_templates_path/footer.vm")
+</div>
+
+</body>
+
+#js ($js_main_file)
+
+$theme.include($bottom_include)
+
+</html>

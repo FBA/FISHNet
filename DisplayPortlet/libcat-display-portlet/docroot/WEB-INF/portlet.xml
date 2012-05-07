@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<portlet-app
+	version="2.0"
+	xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+>
+	<portlet>
+		<portlet-name>libcat-display</portlet-name>
+		<display-name>Library Catalogue Display</display-name>
+		<portlet-class>org.freshwaterlife.portlets.library.DisplayPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<portlet-info>
+			<title>Library Catalogue Display</title>
+			<short-title>Library Catalogue Display</short-title>
+			<keywords>Library Catalogue Display</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+			<qname xmlns:x="http:freshwaterlife.org/events">x:LibraryCatalogue.DisplayItem</qname>
+		</supported-processing-event>
+		<supported-publishing-event>
+			<qname xmlns:x="http:freshwaterlife.org/events">x:LibraryCatalogue.DisplayList</qname>
+		</supported-publishing-event>
+	</portlet>
+	<event-definition>
+		<qname xmlns:x="http:freshwaterlife.org/events">x:LibraryCatalogue.DisplayItem</qname>
+		<value-type>java.lang.String</value-type>
+	</event-definition>
+	<event-definition>
+		<qname xmlns:x="http:freshwaterlife.org/events">x:LibraryCatalogue.DisplayList</qname>
+		<value-type>java.util.Hashmap</value-type>
+	</event-definition>
+</portlet-app>

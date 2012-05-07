@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataConfig>
+    <dataSource
+        name="fwl_gallery"
+        type="JdbcDataSource"
+        driver="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://MYSQLSERVER:3306/gallery"
+        user="USERNAME"
+        password="PASSWORD"/>
+    <dataSource
+        name="fwl_species"
+        type="JdbcDataSource"
+        driver="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://MYSQLSERVER:3306/fwl_species"
+        user="USERNAME"
+        password="PASSWORD"/>
+
+
+    
+    <document name="taxa">
+        <entity name="taxon"
+                dataSource="fwl_species"
+                query="SELECT * FROM taxa"
+                deltaImportQuery="SELECT * FROM taxa WHERE nak_pk='${dataimporter.delta.uid}'"
+                deltaQuery="SELECT * FROM taxa WHERE modified > '${dataimporter.last_index_time}'"
+                >
+            <field column="pk" name="uid"/>
+            <field column="name" name="content"/>
+            <field column="parent" name="parent"/>
+        </entity>
+    </document>
+
+    <document name="image">
+        <entity name="img"
+                dataSource="fwl_gallery"
+                query="SELECT * FROM gtb_item"
+                deltaImportQuery="SELECT * FROM gtb_item WHERE gcl_id='${dataimporter.delta.uid}'"
+                deltaQuery="SELECT * FROM gtb_item WHERE modified > '${dataimporter.last_index_time}'"
+                >
+            <field column="gcl_id" name="uid"/>
+            <field column="gcl_description" name="content"/>
+            <field column="gcl_keywords" name="keywords"/>
+        </entity>
+    </document>
+</dataConfig>

@@ -1,0 +1,377 @@
+<foxml:digitalObject xmlns:foxml="info:fedora/fedora-system:def/foxml#"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	VERSION="1.1"
+	xsi:schemaLocation="info:fedora/fedora-system:def/foxml# http://www.fedora.info/definitions/1/0/foxml1-1.xsd"
+>
+  <foxml:objectProperties>
+    <foxml:property NAME="info:fedora/fedora-system:def/model#state" VALUE="A" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#label" VALUE="FISHNet Dataset" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#ownerId" VALUE="fedoraAdmin" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#createdDate" VALUE="2010-12-14T09:29:12.017Z" />
+    <foxml:property NAME="info:fedora/fedora-system:def/view#lastModifiedDate" VALUE="2010-12-14T09:29:12.017Z" />
+  </foxml:objectProperties>
+  <foxml:datastream CONTROL_GROUP="X" ID="DC" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2010-12-14T09:29:12.017Z" FORMAT_URI="http://www.openarchives.org/OAI/2.0/oai_dc/" ID="DC1.0" LABEL="Dublin Core Record for this object" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+          <dc:title>FISHNet Dataset</dc:title>
+          <dc:identifier>(PID)</dc:identifier>
+        </oai_dc:dc>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream CONTROL_GROUP="X" ID="RELS-EXT" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2010-12-14T09:29:12.017Z" FORMAT_URI="info:fedora/fedora-system:FedoraRELSExt-1.0" ID="RELS-EXT1.0" LABEL="RDF Statements about this object" MIMETYPE="application/rdf+xml">
+      <foxml:xmlContent>
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:fedora-model="info:fedora/fedora-system:def/model#">
+          <rdf:Description>
+            <fedora-model:hasModel rdf:resource="info:fedora/DatasetConfig:CONTENT-MODEL" />
+          </rdf:Description>
+        </rdf:RDF>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream ID="descMetadata" STATE="A" CONTROL_GROUP="X">
+    <foxml:datastreamVersion ID="descMetaData1.0" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
+          <!-- (Dataset Title) -->
+          <mods:titleInfo>
+            <mods:title>title</mods:title>
+          </mods:titleInfo>
+          <!-- (Dataset Description) -->
+          <mods:abstract>description</mods:abstract>
+          <!-- (Geographic Keywords) -->
+          <mods:subject>
+          </mods:subject>
+          <!-- (Temporal Extent) -->
+          <mods:originInfo>
+            <mods:dateOther point="start"></mods:dateOther>
+            <mods:dateOther point="end"></mods:dateOther>
+            <mods:dateIssued></mods:dateIssued>
+          </mods:originInfo>
+          <mods:indentifier type="uri"></mods:indentifier>
+          <mods:language>
+            <mods:languageTerm authority="ISO639-2b">eng</mods:languageTerm>
+          </mods:language>
+          <mods:extension>
+            <gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"
+		    xmlns:gco="http://www.isotc211.org/2005/gco"
+    		xmlns:gml="http://www.opengis.net/gml/3.2"
+    		xmlns:xlink="http://www.w3.org/1999/xlink">
+              <!-- 2.3.27 Metadata language -->
+              <gmd:language>
+                <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="eng">eng</gmd:LanguageCode>
+              </gmd:language>
+              <!-- 2.3.24 Resource type -->
+              <gmd:hierarchyLevel>
+                <gmd:MD_ScopeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
+              </gmd:hierarchyLevel>
+              <!-- 2.3.14 Spatial reference system -->
+              <gmd:referenceSystemInfo>
+                <gmd:MD_ReferenceSystem>
+                  <gmd:referenceSystemIdentifier>
+                    <gmd:RS_Identifier>
+                      <gmd:code>
+                        <gco:CharacterString>urn:ogc:def:crs:EPSG::4258</gco:CharacterString>
+                      </gmd:code>
+                    </gmd:RS_Identifier>
+                  </gmd:referenceSystemIdentifier>
+                </gmd:MD_ReferenceSystem>
+              </gmd:referenceSystemInfo>
+              <!-- Details about the Dataset -->
+              <gmd:identificationInfo>
+                <gmd:MD_DataIdentification>
+                  <!-- 2.3.19 Frequency of update -->
+                  <gmd:resourceMaintenance>
+                    <gmd:MD_MaintenanceInformation>
+                      <gmd:maintenanceAndUpdateFrequency>
+                        <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode">annually</gmd:MD_MaintenanceFrequencyCode>
+                      </gmd:maintenanceAndUpdateFrequency>
+                    </gmd:MD_MaintenanceInformation>
+                  </gmd:resourceMaintenance>
+                  <!-- 2.3.7 Keyword (Keywords) -->
+                  <gmd:descriptiveKeywords>
+                    <gmd:MD_Keywords>
+                      <!-- Keyword(s) From Template -->
+                    </gmd:MD_Keywords>
+                  </gmd:descriptiveKeywords>
+                  <!-- 2.3.15 Spatial resolution -->
+                  <gmd:spatialResolution>
+                    <gmd:MD_Resolution>
+                      <gmd:distance>
+                        <gco:Distance uom="urn:ogc:def:uom:EPSG::9001">20</gco:Distance>
+                      </gmd:distance>
+                    </gmd:MD_Resolution>
+                  </gmd:spatialResolution>
+                  <!-- 2.3.12 Extent -->
+                  <gmd:extent>
+                    <gmd:EX_Extent>
+                      <gmd:geographicElement>
+                        <!-- 2.3.11 Geographic bounding box -->
+                        <gmd:EX_GeographicBoundingBox>
+                          <!-- (West Bounding Longitude) -->
+                          <gmd:westBoundLongitude>
+                            <gco:Decimal>-10</gco:Decimal>
+                          </gmd:westBoundLongitude>
+                          <!-- (East Bounding Longitude) -->
+                          <gmd:eastBoundLongitude>
+                            <gco:Decimal>15</gco:Decimal>
+                          </gmd:eastBoundLongitude>
+                          <!-- (South Bounding Latitude) -->
+                          <gmd:southBoundLatitude>
+                            <gco:Decimal>49</gco:Decimal>
+                          </gmd:southBoundLatitude>
+                          <!-- (North Bounding Latitude) -->
+                          <gmd:northBoundLatitude>
+                            <gco:Decimal>61</gco:Decimal>
+                          </gmd:northBoundLatitude>
+                        </gmd:EX_GeographicBoundingBox>
+                      </gmd:geographicElement>
+                    </gmd:EX_Extent>
+                  </gmd:extent>
+                  <gmd:distributionInfo>
+                    <gmd:MD_Distribution>
+                      <!-- 2.3.16 Resource locator -->
+                      <gmd:transferOptions>
+                        <gmd:MD_DigitalTransferOptions>
+                          <gmd:onLine>
+                            <gmd:CI_OnlineResource>
+                              <gmd:linkage>
+                                <gmd:URL>http://ogc.bgs.ac.uk/dppp/wmc/digmap625.xml</gmd:URL>
+                              </gmd:linkage>
+                            </gmd:CI_OnlineResource>
+                          </gmd:onLine>
+                        </gmd:MD_DigitalTransferOptions>
+                      </gmd:transferOptions>
+                    </gmd:MD_Distribution>
+                  </gmd:distributionInfo>
+                  <!-- 2.3.6 Topic category -->
+                  
+                </gmd:MD_DataIdentification>
+              </gmd:identificationInfo>
+              <gmd:dataQualityInfo>
+                <gmd:DQ_DataQuality>
+                  <gmd:scope>
+                    <gmd:DQ_Scope>
+                      <gmd:level>
+                        <gmd:MD_ScopeCode codeListValue="dataset" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_ScopeCode">dataset</gmd:MD_ScopeCode>
+                      </gmd:level>
+                    </gmd:DQ_Scope>
+                  </gmd:scope>
+                  <!-- 2.3.10 Lineage -->
+                  <gmd:lineage>
+                    <gmd:LI_Lineage>
+                      <gmd:statement>
+                        <gco:CharacterString>The data shows polygonal and selected linear geological information, sourced from published BGS 1:625 000 scale maps.</gco:CharacterString>
+                      </gmd:statement>
+                    </gmd:LI_Lineage>
+                  </gmd:lineage>
+                </gmd:DQ_DataQuality>
+              </gmd:dataQualityInfo>
+            </gmd:MD_Metadata>
+          </mods:extension>
+          <mods:note type="admin">red</mods:note>
+        </mods:mods>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream ID="rightsMetadata" STATE="A" CONTROL_GROUP="X">
+    <foxml:datastreamVersion ID="rightsMetaData1.0" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
+          <!-- (Copyright Owner) -->
+          <mods:name>
+            <mods:namePart>FBA</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text">owner</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <!-- (Contact Person) -->
+          <mods:name>
+            <mods:namePart>mhaft</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text">contact</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <!-- (Original Creator) -->
+          <mods:name>
+            <mods:namePart>unknown</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text">creator</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:accessCondition type="restriction on access">no limitations</mods:accessCondition>
+          <mods:accessCondition type="use and reproduction">no conditions apply</mods:accessCondition>
+          <mods:extension>
+            <gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"
+		      xmlns:gco="http://www.isotc211.org/2005/gco"
+    		  xmlns:gml="http://www.opengis.net/gml/3.2"
+    		  xmlns:xlink="http://www.w3.org/1999/xlink">
+              <gmd:identificationInfo>
+                <gmd:MD_DataIdentification>
+                  <!-- 2.3.18 Responsible organisation -->
+                  <gmd:pointOfContact>
+                    <gmd:CI_ResponsibleParty>
+                      <!-- (Contact Institution) -->
+                      <gmd:organisationName>
+                        <gco:CharacterString>FBA</gco:CharacterString>
+                      </gmd:organisationName>
+                      <gmd:contactInfo>
+                        <gmd:CI_Contact>
+                          <gmd:phone>
+                            <gmd:CI_Telephone>
+                              <!-- (Contact Telephone) -->
+                              <gmd:voice>
+                                <gco:CharacterString>01539487716</gco:CharacterString>
+                              </gmd:voice>
+                            </gmd:CI_Telephone>
+                          </gmd:phone>
+                          <gmd:address>
+                            <gmd:CI_Address>
+                              <!-- (Contact Email) -->
+                              <gmd:electronicMailAddress>
+                                <gco:CharacterString>mhaft@fba.org.uk</gco:CharacterString>
+                              </gmd:electronicMailAddress>
+                            </gmd:CI_Address>
+                          </gmd:address>
+                        </gmd:CI_Contact>
+                      </gmd:contactInfo>
+                      <gmd:role>
+                        <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="distributor">pointOfContact</gmd:CI_RoleCode>
+                      </gmd:role>
+                    </gmd:CI_ResponsibleParty>
+                  </gmd:pointOfContact>
+                </gmd:MD_DataIdentification>
+              </gmd:identificationInfo>
+            </gmd:MD_Metadata>
+          </mods:extension>
+        </mods:mods>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream ID="PREMIS" STATE="A" CONTROL_GROUP="X">
+    <foxml:datastreamVersion ID="PREMIS1.0" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <premis:premis xmlns:premis="http://www.loc.gov/standards/premis" version="2.0">
+          <premis:event>
+             <premis:eventIdentifier>eventIdentifier</premis:eventIdentifier>
+             <premis:eventType>eventType</premis:eventType>
+             <premis:eventDateTime>eventDateTime</premis:eventDateTime>
+             <premis:eventDetail>eventDetail</premis:eventDetail>
+             <premis:eventOutcomeInformation>
+                 <premis:eventOutcome>eventOutcome</premis:eventOutcome>
+                 <premis:eventOutcomeDetail>eventOutcomeDetail</premis:eventOutcomeDetail>
+             </premis:eventOutcomeInformation>                                                       
+             <premis:linkingAgentIdentifier>
+                 <premis:linkingAgentIdentifierType>Agent</premis:linkingAgentIdentifierType>
+                 <premis:linkingAgentIdentifierValue>userid</premis:linkingAgentIdentifierValue>                                                      
+             </premis:linkingAgentIdentifier>
+             <premis:linkingAgentIdentifier>
+                 <premis:linkingAgentIdentifierType>Full Name</premis:linkingAgentIdentifierType>
+                 <premis:linkingAgentIdentifierValue>name</premis:linkingAgentIdentifierValue>                                                        
+             </premis:linkingAgentIdentifier>         
+             <premis:linkingObjectIdentifier>pid</premis:linkingObjectIdentifier>
+           </premis:event>
+        </premis:premis>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream> 
+  <foxml:datastream ID="POLICY" STATE="A" CONTROL_GROUP="X" VERSIONABLE="true">
+    <foxml:datastreamVersion ID="POLICY.0" LABEL="inlineXACMLpolicy" CREATED="2011-02-04T16:01:41.399Z" MIMETYPE="text/xml" SIZE="0">
+      <foxml:contentDigest TYPE="DISABLED" DIGEST="none"/>
+      <foxml:xmlContent>
+        <Policy RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable" xmlns="urn:oasis:names:tc:xacml:1.0:policy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <Description>(PID Message)</Description>
+          <Target>
+            <Subjects>
+              <AnySubject/>
+            </Subjects>
+            <Resources>
+              <Resource>
+                <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                  <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">(PID)</AttributeValue>
+                  <ResourceAttributeDesignator AttributeId="urn:fedora:names:fedora:2.1:resource:object:pid" DataType="http://www.w3.org/2001/XMLSchema#string" />
+                </ResourceMatch>
+              </Resource>
+            </Resources>
+            <Actions>
+              <AnyAction/>
+            </Actions>
+          </Target>
+          <Rule Effect="Permit" RuleId="1">
+            <!-- ************************************************************************************************************************************************ -->
+            <!-- Permission is conditional upon the user login Id being one of the users identified in the set below or the role being the fedora administrator.  -->
+            <!-- ************************************************************************************************************************************************ -->
+            <Target>
+              <Subjects>
+                <AnySubject/>
+              </Subjects>
+              <Resources>
+                <AnyResource/>
+              </Resources>
+              <Actions>
+                <AnyAction/>
+              </Actions>
+            </Target>
+            <Condition FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-at-least-one-member-of">
+              <SubjectAttributeDesignator DataType="http://www.w3.org/2001/XMLSchema#string" AttributeId="fedoraRole"/>
+              <Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-bag">
+                <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">administrator</AttributeValue>
+              </Apply>
+            </Condition>
+          </Rule>
+          <Rule Effect="Permit" RuleId="2">
+            <!-- *********************************************************************************************** -->
+            <!-- Permission is conditional upon the request being for the getBasicMetadata disseminator method.  -->
+            <!-- *********************************************************************************************** -->
+            <Target>
+              <Subjects>
+                <AnySubject/>
+              </Subjects>
+              <Resources>
+                <Resource>
+                  <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                    <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">DatasetConfig:XSLT-SDEF</AttributeValue>
+                    <ResourceAttributeDesignator AttributeId="urn:fedora:names:fedora:2.1:resource:sdef:pid" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+                  </ResourceMatch>
+                  
+                  <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                    <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">getDocumentStyle1</AttributeValue>
+                    <ResourceAttributeDesignator AttributeId="urn:fedora:names:fedora:2.1:resource:disseminator:method" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+                  </ResourceMatch>
+                  <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                    <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">getDocumentStyle2</AttributeValue>
+                    <ResourceAttributeDesignator AttributeId="urn:fedora:names:fedora:2.1:resource:disseminator:method" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+                  </ResourceMatch>
+                  <!--
+                  <Condition FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-at-least-one-member-of">
+                    <ResourceAttributeDesignator AttributeId="urn:fedora:names:fedora:2.1:resource:disseminator:method" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+                    <Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-bag">
+		      <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">getDocumentStyle1</AttributeValue>
+		      <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">getDocumentStyle2</AttributeValue>
+		    </Apply>
+		  </Condition>
+                  -->
+                </Resource>                
+              </Resources>
+              <Actions>
+                <Action>
+                  <ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                    <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">urn:fedora:names:fedora:2.1:action:id-getDissemination</AttributeValue>
+                    <ActionAttributeDesignator DataType="http://www.w3.org/2001/XMLSchema#string" AttributeId="urn:fedora:names:fedora:2.1:action:id"/>
+                  </ActionMatch>
+                </Action>
+              </Actions>
+            </Target>
+          </Rule>
+          <Rule Effect="Deny" RuleId="3">
+            <!-- **************************************************** -->
+            <!-- If none of the above then don't permit the request.  -->
+            <!-- **************************************************** -->
+          </Rule>
+        </Policy>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+</foxml:digitalObject>

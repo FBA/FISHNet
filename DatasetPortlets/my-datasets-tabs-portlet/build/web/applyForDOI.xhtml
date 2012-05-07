@@ -1,0 +1,26 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<h:form id="applyDOIForm">
+
+		<h:outputText escape="false" value="This will be the screen where the DOI is explained." />
+		<br />
+		<h:outputText escape="false" value="Below is the PID to be submitted -" />
+		<br />
+		<h:outputText escape="false" value="#{sessionBean.workingPid}" />
+		<br />
+		<h:outputText escape="false" value="Click 'Agree' to send the dataset to a Reviewer for promotion to Orange" />
+		<br />
+
+		<h:commandLink id="promote" action="#{sessionBean.doPromote}">
+			<h:outputText value="Agree?" />
+		</h:commandLink>
+		<br />
+		<h:commandLink id="dontagree" action="dontagree">
+			<h:outputText value="Don't Agree?" />
+		</h:commandLink>
+	</h:form>
+</div>

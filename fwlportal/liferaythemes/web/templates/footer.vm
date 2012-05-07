@@ -1,0 +1,6 @@
+<div class="footer">
+	<hr />
+	<p><a href="/web/guest">Home</a> | <a href="http://www.freshwaterlife.org/servlet/CDSServlet?status=Mj1vcmcuZmFvLndhaWNlbnQuY2RzLlNpdGVtYXAmND0yNzE5JjY9ZW4mMzA9cmVuZGVy">Site map</a> | <a href="/web/fwl">About us</a> | <a href="/web/fwl/contact-us">Contact Us</a> | <a href="/web/fwl/help">Help</a></p> 
+	<p><a href="#" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.freshwaterlife.org');">Make Freshwater<i>Life</i> my Homepage</a> | <a href="/web/fwl/general-use-and-copyright">Copyright Disclaimer</a> | <a href="/web/fwl/copyright-statement">Reference Freshwater<em>Life</em></a> | <a href="/web/fwl/contact-us">Report a Problem</a></p> 
+	<p>Copyright $dateTool.format( 'yyyy', $dateTool.getDate()) Freshwater Biological Association on behalf of Freshwater<em>Life</em> Partners, Collaborators and Contributors.</p>
+</div>

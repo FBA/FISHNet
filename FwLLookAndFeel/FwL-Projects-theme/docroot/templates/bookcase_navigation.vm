@@ -1,0 +1,18 @@
+	
+        #js("$javascript_folder/jquery-1.4.2.js")
+        #js("$javascript_folder/jquery.kwicks-1.5.1.js")
+	#js("$javascript_folder/custom.js") 
+	<ul class="kwicks">
+            <li class="Beginners"><a href="/web/guest/beginner-s-guide"></a></li>
+            <li class="Species"><a href="/web/guest/species"></a></li>
+            <li class="Habitats"><a href="/web/guest/habitats"></a></li>
+            <li class="Identification"><a href="/web/guest/identification"></a></li>
+            <li class="Images"><a href="http://www.freshwaterlife.org/imagearchive"></a></li>
+            <li class="Education"><a href="http://www.freshwaterlife.org/id/2873"></a></li>
+            <li class="Science"><a href="http://www.freshwaterlife.org/id/106173"></a></li>
+            <li class="Processes"><a href="http://www.freshwaterlife.org/id/2870"></a></li>
+            <li class="Management"><a href="http://www.freshwaterlife.org/id/106177"></a></li>
+            <li class="Fisheries"><a href="http://www.freshwaterlife.org/id/17763"></a></li>
+            <li class="Impacts"><a href="http://www.freshwaterlife.org/id/2875"></a></li>
+	</ul>
+        

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--*******************************************************************************************************************************************-->
+<!-- FOXML INGEST EXAMPLE:  -->
+<!-- This is an example of a FOXML object as it should be encoded for ingest in the repository.  Note that attributes -->
+<!-- that are automatically assigned by the Fedora repository are omitted.  Notable ommissions are the created and last -->
+<!-- modified dates in the object properties, the created date, size, and versionable attributes on datastreams and -->
+<!-- the created date and versionable attributes on disseminators.   -->
+<!--*******************************************************************************************************************************************-->
+<!-- NOTE!!  Please see the FOXML Reference Example object in the section named "Fedora Digital Objects" in the  -->
+<!-- Fedora System Documentation.  This will give an element-by-element explanation of a FOXML instance document.  -->
+<!--*******************************************************************************************************************************************-->
+<foxml:digitalObject VERSION="1.1" xmlns:foxml="info:fedora/fedora-system:def/foxml#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="info:fedora/fedora-system:def/foxml# http://www.fedora.info/definitions/1/0/foxml1-1.xsd">
+	<foxml:objectProperties>
+    	<foxml:property NAME="info:fedora/fedora-system:def/model#state" VALUE="A" />
+    	<foxml:property NAME="info:fedora/fedora-system:def/model#label" VALUE="FBA Library Catalogue Object"/>
+    	<foxml:property NAME="info:fedora/fedora-system:def/model#ownerId" VALUE="fedoraAdmin"/>
+    	<foxml:property NAME="info:fedora/fedora-system:def/model#createdDate" VALUE="2010-11-23T12:37:42.015Z"/>
+    	<foxml:property NAME="info:fedora/fedora-system:def/view#lastModifiedDate" VALUE="2010-11-23T12:37:42.015Z"/>
+  	</foxml:objectProperties>
+  	<foxml:datastream CONTROL_GROUP="X" ID="DC" STATE="A" VERSIONABLE="true">
+    	<foxml:datastreamVersion CREATED="2010-11-23T12:37:42.015Z" FORMAT_URI="http://www.openarchives.org/OAI/2.0/oai_dc/" ID="DC1.0" LABEL="Dublin Core Record for this object" MIMETYPE="text/xml">
+      		<foxml:xmlContent>
+		        <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/">
+		          <dc:title>Library Catalogue Object</dc:title>
+		          <dc:identifier></dc:identifier>
+		        </oai_dc:dc>
+		    </foxml:xmlContent>
+    	</foxml:datastreamVersion>
+  	</foxml:datastream>
+  	<foxml:datastream CONTROL_GROUP="X" ID="RELS-EXT" STATE="A" VERSIONABLE="true">
+    	<foxml:datastreamVersion CREATED="2010-11-23T12:37:42.015Z" FORMAT_URI="info:fedora/fedora-system:FedoraRELSExt-1.0" ID="RELS-EXT1.0" LABEL="RDF Statements about this object" MIMETYPE="application/rdf+xml">
+      		<foxml:xmlContent>
+        		<rdf:RDF xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          			<rdf:Description>
+            			<fedora-model:hasModel rdf:resource="info:fedora/LibraryConfig:CONTENT-MODEL"/>
+          			</rdf:Description>
+        		</rdf:RDF>
+      		</foxml:xmlContent>
+    	</foxml:datastreamVersion>
+  	</foxml:datastream>
+    <foxml:datastream ID="descMetadata" STATE="A" CONTROL_GROUP="X">
+		<foxml:datastreamVersion ID="descMetaData1.0" MIMETYPE="text/xml">
+			<foxml:xmlContent>
+				
+			</foxml:xmlContent>
+		</foxml:datastreamVersion>
+	</foxml:datastream>
+</foxml:digitalObject>

@@ -1,0 +1,133 @@
+<foxml:digitalObject xmlns:foxml="info:fedora/fedora-system:def/foxml#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="1.1" xsi:schemaLocation="info:fedora/fedora-system:def/foxml# http://www.fedora.info/definitions/1/0/foxml1-1.xsd" PID="Library:1c8a053a2-e413-43d3-aa60-c9a4ba91dfb7">
+  <foxml:objectProperties>
+    <foxml:property NAME="info:fedora/fedora-system:def/model#state" VALUE="A" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#label" VALUE="FBA Library Catalogue Object" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#ownerId" VALUE="fedoraAdmin" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#createdDate" VALUE="2010-11-23T12:37:42.015Z" />
+    <foxml:property NAME="info:fedora/fedora-system:def/view#lastModifiedDate" VALUE="2010-11-23T12:37:42.015Z" />
+  </foxml:objectProperties>
+  <foxml:datastream CONTROL_GROUP="X" ID="DC" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2010-11-23T12:37:42.015Z" FORMAT_URI="http://www.openarchives.org/OAI/2.0/oai_dc/" ID="DC1.0" LABEL="Dublin Core Record for this object" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+          <dc:title>Library Catalogue Object</dc:title>
+          <dc:identifier>Library:1c8a053a2-e413-43d3-aa60-c9a4ba91dfb7</dc:identifier>
+        </oai_dc:dc>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream CONTROL_GROUP="X" ID="RELS-EXT" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2010-11-23T12:37:42.015Z" FORMAT_URI="info:fedora/fedora-system:FedoraRELSExt-1.0" ID="RELS-EXT1.0" LABEL="RDF Statements about this object" MIMETYPE="application/rdf+xml">
+      <foxml:xmlContent>
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:fedora-model="info:fedora/fedora-system:def/model#">
+          <rdf:Description rdf:about="info:fedora/Library:1c8a053a2-e413-43d3-aa60-c9a4ba91dfb7">
+            <fedora-model:hasModel rdf:resource="info:fedora/LibraryConfig:CONTENT-MODEL" />
+          </rdf:Description>
+        </rdf:RDF>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream ID="descMetadata" STATE="A" CONTROL_GROUP="X">
+    <foxml:datastreamVersion ID="descMetaData1.0" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
+          <mods:recordInfo>
+        <mods:recordIdentifier>84336</mods:recordIdentifier>
+        <mods:recordCreationDate>CCAP</mods:recordCreationDate>
+        <mods:recordContentSource>FBA Library Catalogue</mods:recordContentSource>
+        <mods:recordOrigin>Record transformed into MODS from an FBA Library Catlaogue record using a style sheet available at http://xxx. Metadata originally created in a locally defined record format called Document Type B</mods:recordOrigin>
+    </mods:recordInfo>
+    <mods:name type="personal">
+        <mods:namePart>Barnett H.L.</mods:namePart>
+    </mods:name>
+    <mods:name type="personal">
+        <mods:namePart>Hunter B.B.</mods:namePart>
+    </mods:name>
+    <mods:name type="corporate">
+        <mods:namePart>The National Institute for Environmental Studies Japan.</mods:namePart>
+    </mods:name>
+    <mods:name type="corporate">
+        <mods:namePart>Coulter Electronics Ltd.</mods:namePart>
+    </mods:name>
+    <mods:name>
+        <mods:role>
+            <mods:roleTerm type="text">ed</mods:roleTerm>
+        </mods:role>
+    </mods:name>
+    <mods:titleInfo>
+        <mods:title>Illustrated genera of imperfect fungi</mods:title>
+    </mods:titleInfo>
+    <mods:note type="source characteristics">R and D note 121</mods:note>
+    <mods:location>
+        <mods:physicalLocation>Windermere</mods:physicalLocation>
+        <mods:shelfLocator>C7.175</mods:shelfLocator>
+    </mods:location>
+    <mods:location>
+        <mods:physicalLocation>Windermere</mods:physicalLocation>
+        <mods:shelfLocator>E3.11(72)</mods:shelfLocator>
+    </mods:location>
+    <mods:location>
+        <mods:physicalLocation>Dorset</mods:physicalLocation>
+        <mods:shelfLocator>058</mods:shelfLocator>
+    </mods:location>
+    <mods:location>
+        <mods:physicalLocation>Dorset</mods:physicalLocation>
+        <mods:shelfLocator>532:577.3</mods:shelfLocator>
+    </mods:location>
+    <mods:subject>
+        <mods:geographic>British Isles: inland Waters</mods:geographic>
+    </mods:subject>
+    <mods:subject>
+        <mods:geographic>Leicester: inland waters</mods:geographic>
+    </mods:subject>
+    <mods:subject>
+        <mods:name type="corporate">
+            <mods:namePart>STWA</mods:namePart>
+        </mods:name>
+    </mods:subject>
+    <mods:subject>
+        <mods:name type="corporate">
+            <mods:namePart>British Isles</mods:namePart>
+        </mods:name>
+    </mods:subject>
+    <mods:subject authority="local">
+        <mods:topic>5B9</mods:topic>
+    </mods:subject>
+    <mods:subject ID="_5B9">
+        <mods:topic>Fungi</mods:topic>
+        <mods:topic>Morphology and taxonomy</mods:topic>
+        <mods:topic>Other fungal groups</mods:topic>
+    </mods:subject>
+    <mods:subject authority="local">
+        <mods:topic>9EA5</mods:topic>
+    </mods:subject>
+    <mods:subject ID="_9EA5">
+        <mods:topic>General limnology</mods:topic>
+        <mods:topic>Hydrobiology</mods:topic>
+        <mods:topic>Freshwater</mods:topic>
+        <mods:topic>Geographical</mods:topic>
+    </mods:subject>
+    <mods:identifier type="local">BK</mods:identifier>
+    <mods:identifier type="local">TH</mods:identifier>
+    <mods:identifier type="doi">???</mods:identifier>
+    <mods:originInfo>
+        <mods:issuance>monographic</mods:issuance>
+        <mods:edition>2nd</mods:edition>
+        <mods:place>
+            <mods:placeTerm type="text">Minneapolis</mods:placeTerm>
+        </mods:place>
+        <mods:publisher>Burgess</mods:publisher>
+        <mods:dateIssued>1972</mods:dateIssued>
+    </mods:originInfo>
+    <mods:typeOfResource>text</mods:typeOfResource>
+    <mods:physicalDescription>
+        <mods:extent>241</mods:extent>
+        <mods:extent>+ disk</mods:extent>
+    </mods:physicalDescription>
+    <mods:identifier type="isbn">0813722764</mods:identifier>
+    <mods:note type="version identification">3</mods:note>
+        </mods:mods>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+</foxml:digitalObject>

@@ -1,0 +1,547 @@
+/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+
+@import url(color_schemes/green.css);
+@import url(color_schemes/blue.css);
+@import url(color_schemes/old-green.css);
+@import url(color_schemes/red.css);
+@import url(basic.css);
+
+
+
+/* ---------- Base ---------- */
+
+html {
+	height: 100%;
+}
+
+/* ---------- Main content body ---------- */
+
+#wrapper {
+	background-color:black;
+	background-image:url(../images/common/fwlMasthead_bg.gif);
+	background-repeat:repeat-x;
+	background-attachment:scroll;
+	background-position:center top;
+	color:silver;
+	height:30px;
+	width:100%;
+	padding:0;
+	margin:0;
+	border-bottom:2px;
+	border-bottom:black;
+}
+
+.ie6 #wrapper {
+	background-color:white;
+	background-image:url(../images/common/fwlMasthead_bg.gif);
+	background-repeat:repeat-x;
+	background-attachment:scroll;
+	background-position:center top;
+	color:silver;
+	height:30px;
+	width:100%;
+	padding:0;
+	margin:0;
+	border-bottom:2px;
+	border-bottom:black;
+}
+
+#content-wrapper {
+	margin: 0 auto;
+	width: 98%;
+}
+
+/* ---------- masthead ---------- */
+
+#banner {
+	height: 30px;
+	top: -1px;
+}
+
+#banner h1.logo {
+	display: block;
+	font-size: 2em;
+	margin: 0 0 0 10px;
+	padding: 0;
+}
+
+#banner .logo a {
+	text-decoration: none;
+}
+
+.ie6 #banner .logo {
+	zoom: 1;
+}
+
+#fba-logo {
+	position: absolute;
+	height: 30px;
+	width: 40px;
+	top: -1px;
+	right: 9px;
+	background-image: url("../images/common/fba_logo.png");
+}
+
+#fba-logo span {
+	display: none;
+	}
+
+/* ---------- FwL Masthead ---------- */
+
+#FwLMasthead {
+	position: absolute;
+	left: 175px;
+	top: 0px;
+}
+
+#topLinks {
+    font-size:9pt;
+    vertical-align:top;
+    margin-top:0;
+    margin-bottom:0;
+}
+#topLinks li {
+    display:inline;
+    padding-left:3px;
+    padding-right:3px;
+}
+#topLinks a{
+    color:silver;
+    text-decoration:none;
+}
+#topLinks a:visited{
+    color:silver;
+    text-decoration:none;
+}
+#topLinks a:hover{
+    color:white;
+    text-decoration:none;
+    background-color: transparent;
+}
+
+/* ---------- Section Header ---------- */
+
+#sectionHeader {
+    
+}
+
+#header1 {
+    position: absolute;
+    height: 200px;
+    width: 800px;
+    background-image: url("../images/common/HeaderTitle.png");
+    z-indez: -1;
+}
+#header1 span {
+	display: none;
+	}
+
+#header2 {
+    float:left;
+}
+
+#header2 span {
+	display: none;
+	}
+
+#headerContent {
+    height:200px;
+    border-bottom: 3px solid;
+    width: 100%;
+    margin:0;
+    padding:0;
+    background-image:url("../images/common/Headerbg.jpg");
+    background-repeat:repeat-x;
+    background-attachment:scroll;
+    background-position:center top;
+    border-bottom-color: #000000;
+}
+#sectionHeader h1 {
+    font-family: Georgia,"Times New Roman",Times,serif;
+    font-size: 24pt;
+    font-weight: bold;
+    margin-left:20px;
+    margin-right:0;
+    margin-top:0;
+    margin-bottom:0;
+    padding-top: 4px;
+    padding-bottom:0;
+    padding-left:0;
+    padding-right:0;
+    text-align: left;
+    text-decoration: none;
+}
+
+#sectionHeader h2 {
+    text-decoration: none;
+}
+
+#headerlinks {
+    color: #000000;
+    padding-left: 20px;
+    text-align: left;  
+    position: absolute;
+    top: 195px;
+    left: 20px;
+    z-indez: -1;
+}
+
+#headerlinks a {
+    color: #000000;
+}
+
+
+
+/* ---------- Dock ---------- */
+
+.js .interactive-mode {
+	right: 60px;
+	top: 0px;
+}
+
+
+
+
+/* ---------- Add/remove page ---------- */
+
+/*.js #navigation .enter-page {
+	background-color: #1E2529;
+	padding: 2px;
+}
+
+.js #navigation .enter-page a {
+	background: none;
+	display: inline;
+	font-weight: bold;
+	padding: 0;
+}
+
+.js #navigation .enter-page .save-page {
+	background: url(../images/dock/my_place_current.png) no-repeat 0 50%;
+	margin: 0 10px;
+	padding-left: 20px;
+}
+
+.ie.js #navigation .enter-page .save-page {
+	display: inline-block;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	vertical-align: top;
+}
+
+.js #navigation .enter-page .cancel-page {
+	display: none;
+}
+
+.ie.js #navigation .enter-page {
+	padding: 0;
+}
+
+.ie.js #navigation .enter-page input.text {
+	margin: 2px;
+	padding: 3px 1px;
+}
+
+.js #navigation {
+	position: relative;
+}
+
+.js #add-page {
+	background: #020509;
+	border: 1px solid #304049;
+	border-bottom: none;
+	bottom: 100%;
+	font-weight: bold;
+	position: absolute;
+	right: 95%;
+}
+
+.js #add-page a {
+	color: white;
+        background: none;
+	display: block;
+	text-decoration: none;
+}
+
+.js #add-page a span {
+	background: url(../images/common/add.png) no-repeat 0 50%;
+	display: block;
+	margin-left: 15px;
+	padding: 5px 20px 2px;
+}*/
+
+/* ---------- Portlet ---------- */
+
+/* sides */
+.portlet-l {background: url(../images/common/dot.gif) 0 0 repeat-y}
+.portlet-r {background: url(../images/common/dot.gif) 100% 0 repeat-y} 
+
+/* corners */
+.portlet-bl {background: url(../images/common/bl.gif) 0 100% no-repeat}
+.portlet-br {background: url(../images/common/br.gif) 100% 100% no-repeat}
+.portlet-tl {background: url(../images/common/tl.gif) 0 0 no-repeat}
+.portlet-tr {background: url(../images/common/tr.gif) 100% 0 no-repeat} 
+
+/*.portlet-border {
+	border: 2px solid;
+	border-color: #627e82;
+	margin: 10px;
+}*/
+
+.portlet {
+	background: #FFF;
+	margin-left:10px;
+	margin-top:10px;
+	margin-right:10px;
+        margin-bottom:10px;
+	padding: 10px;
+	color: #000;
+	font-size: 10pt;
+	border-top: 2px solid;
+	border-bottom: 2px solid;
+	border-color: #627e82;
+}
+
+.ie .portlet {
+	margin-bottom: 0px;
+}
+
+.portlet-topper {
+	border-bottom: 2px solid #cdd7a2;
+	padding-right: 40px;
+}
+
+.portlet-title {
+	color: #000;
+	padding: 5px;
+	font-size: 13pt;
+	font-weight: bold;
+}
+
+.ie .portlet-title {
+	padding-bottom: 5px;
+}
+
+.portlet-icons {
+	right: 6px;
+}
+
+.portlet-icon-back,
+.portlet-icon-back:hover {
+	color: #000;
+}
+
+/* ---------- Add Application ---------- */
+
+body.lfr-has-sidebar {
+	padding-left: 0;
+}
+
+.lfr-has-sidebar #content-wrapper {
+	padding-left: 270px;
+	width: auto;
+}
+
+.lfr-add-content h2 span {
+	font-size: 10pt;
+	color: #000;
+}
+
+/* ---------- Actions button ---------- */
+
+.lfr-actions.portlet-options {
+	margin: 0 5px 0 0;
+}
+
+.lfr-actions.portlet-options .lfr-trigger strong {
+	padding: 0;
+}
+
+.lfr-actions.portlet-options .lfr-trigger strong span {
+	background-image: none;
+	color: #000;
+	height: auto;
+	padding: 0 3px;
+	text-indent: 0;
+	width: auto;
+}
+
+.portlet-options.visible {
+	background: #FFF url(../images/forms/button.png) repeat-x 0 100%;
+	border-color: #DEDEDE;
+	padding: 0 0 1px 0;
+}
+
+.portlet-options.visible .lfr-trigger strong span {
+	background-image: none;
+	color: #06C;
+}
+
+/* ---------- Headers ---------- */
+
+h1 {
+	color: #273d5f;
+	/*border-bottom: 2px solid #cdd7a2;*/
+}
+
+h2 {
+	color: #273d5f;
+}
+
+h3 {
+	color: #273d5f;
+}
+
+h4 {
+	color: #273d5f;
+}
+
+/* ---------- Links ---------- */
+
+a {
+	color: #369;
+	text-decoration: none;
+}
+
+/*a:hover {
+        background-color: #cdd7a2;
+	color: #273d5f;
+	text-decoration: none;
+}*/
+
+a:visited {
+}
+
+
+/* --------- Footer ----------- */
+
+.footer {
+        font-size: 8pt;
+	width: 100%;
+	text-align: center;
+	color: #000000;
+	padding-top: 5px;
+	padding-bottom:15px;
+	padding-left:5px;
+        padding-right:5px;
+        text-decoration: none;
+}
+
+.footer a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.footer a:hover {
+        background-color: #cdd7a2;
+	color: #273d5f;
+	text-decoration: none;
+}
+
+/*------------Navigation--------------*/
+
+
+.kwicks {  
+     list-style: none;
+     float: right;
+     position: relative;  
+     margin: 0;  
+     padding: 0; 
+     background-image:url(../images/common/no_flicker.jpg); /*some browsers are to slow when aligning the menu items via jQuery and so the background shines through, this prevents this flickering*/
+
+ } 
+ 
+.kwicks li{  
+     display: block;  
+     overflow: hidden;  
+     padding: 0;  
+     cursor: pointer;  
+     /*float: right;*/
+     width: 50px;
+     height: 200px;
+     margin-right: 0px;
+     background-image:url(../images/common/fwlmenu.jpg);
+     background-repeat:no-repeat;
+}
+.kwicks a{
+	display:block;
+	height:200px;
+	text-indent:-9999px;
+	outline:none;
+}
+
+.Home {
+	background-position:0px 0px;
+}
+.Species {
+	background-position:-320px 0px;
+}
+.Habitats {
+	background-position:-640px 0px;
+}
+.Identification { 
+	background-position:-960px 0px;
+}
+.Images {
+	background-position:-1280px 0px;
+}
+.Education {
+	background-position:-1600px 0px;
+}
+.Science {
+	background-position:-1920px 0px;
+}
+.Impacts { 
+	background-position:-2240px 0px;
+}
+.Processes { 
+	background-position:-2560px 0px;
+}
+.Management { 
+	background-position:-2880px 0px;
+}
+.Fisheries { 
+	background-position:-3200px 0px;
+}
+.Workspaces { 
+	background-position:-3520px 0px;
+}
+
+
+.Home.active, .Home:hover { 
+	background-position: 0 bottom;
+}
+.Species.active, .Species:hover{
+	background-position: -320px bottom;
+}
+.Habitats.active, .Habitats:hover {
+	background-position: -640px bottom;
+}
+.Identification.active, .Identification:hover {
+	background-position: -960px bottom;
+}
+.Images.active, .Images:hover { 
+	background-position: -1280px bottom;
+}
+.Education.active, .Education:hover{
+	background-position: -1600px bottom;
+}
+.Science.active, .Science:hover {
+	background-position: -1920px bottom;
+}
+.Impacts.active, .Impacts:hover {
+	background-position: -2240px bottom;
+}
+.Processes.active, .Processes:hover {
+	background-position: -2560px bottom;
+}
+.Management.active, .Management:hover {
+	background-position: -2880px bottom;
+}
+.Fisheries.active, .Fisheries:hover {
+	background-position: -3200px bottom;
+}
+.Workspaces.active, .Workspaces:hover {
+	background-position: -3520px bottom;
+}
+

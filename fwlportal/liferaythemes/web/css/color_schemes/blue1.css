@@ -1,0 +1,108 @@
+/* ---------- Section Header ---------- */
+ 
+.ie .blue #sectionhead {
+  	background-image: url(../../images/common/blueHeader_bg.gif);
+  	height:50px;
+  	border-bottom: 4px solid;
+  	width: 100%;
+  	margin:0;
+  	padding:0;
+  	background-repeat:repeat-x;
+  	background-attachment:scroll;
+        background-position:center top;
+        border-bottom-color: #cdd7a2;
+}
+  
+.ie .blue #sectiontitle {
+  	color: #cdd7a2;
+  	font-size: 22pt;
+  	font-family: Georgia, "Times New Roman", times, serif;
+  	margin-left:50px;
+  	margin-right:0;
+  	margin-top:0;
+  	margin-bottom:10px;
+  	padding-top: 10px;
+  	padding-bottom:0;
+  	padding-left:0;
+        padding-right:0;
+}
+  
+.blue #sectionhead {
+	background-image: url(../../images/common/blueHeader_bg.gif);
+	height:50px;
+	border-bottom: 4px solid;
+	width: 100%;
+	margin:0;
+	padding:0;
+	background-repeat:repeat-x;
+	background-attachment:scroll;
+        background-position:center top;
+        border-bottom-color: #cdd7a2;
+}
+
+.blue #sectiontitle {
+	color: #cdd7a2;
+	font-size: 24pt;
+	font-family: Georgia, "Times New Roman", times, serif;
+	margin-left:50px;
+	margin-right:0;
+	margin-top:0;
+	margin-bottom:0;
+	padding-top: 10px;
+	padding-bottom:0;
+	padding-left:0;
+        padding-right:0;
+}
+
+/* ---------- Main navigation ---------- */
+
+.blue #navigation {
+	float:left;
+	width:100%;
+	font-size:93%;
+	line-height:normal;
+
+}
+
+.blue #navigation ul {
+	margin-left:49px;
+	margin-top:-3px;
+	margin-right:0px;
+        margin-bottom:0px;
+	padding:0;
+        list-style:none;
+}
+
+.blue #navigation li {
+	float:left;
+	background:url("../../images/common/blue-norm_right.gif") no-repeat right bottom;
+	margin:0;
+	padding:0;
+}
+
+.blue #navigation a {
+	display:block;
+	background:url("../../images/common/blue-norm_left.gif") no-repeat left bottom;
+	padding:5px 15px;
+}
+
+
+.blue #navigation li a {
+	display: block;
+	text-decoration: none;
+}
+
+.blue #navigation li a span {
+	text-decoration: none;
+}
+
+.blue #navigation li.selected a,
+.blue #navigation li a:hover {
+	color: #000;
+}
+
+.blue #navigation li.selected a span {
+	background: url(../images/navigation/bullet_selected.png) no-repeat 0 50%;
+	padding-left: 10px;
+}
+  

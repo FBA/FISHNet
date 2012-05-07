@@ -1,0 +1,18 @@
+<div id="sectionhead">
+        #set ($Species = "Species")
+        #set ($Images = "Images")
+        #set ($Habitats = "Habitats")
+	#foreach ($nav_item in $nav_items)
+		#if ($nav_item.isSelected())
+			#if ($nav_item.getName() == $Species)
+				<h1 id="sectiontitle"><span>Species Collection</span></h1>
+			#elseif ($nav_item.getName() == $Images)
+				<h1 id="sectiontitle"><span>Image Archive</span></h1>
+			#elseif ($nav_item.getName() == $Habitats)
+				<h1 id="sectiontitle"><span>Habitats Collection</span></h1>
+			#else
+				<h1 id="sectiontitle"><span>$nav_item.getName()</span></h1>
+			#end
+		#end				
+	#end
+</div>

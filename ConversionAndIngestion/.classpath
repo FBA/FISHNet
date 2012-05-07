@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/axis-1.3-PATCHED.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/fcrepo-client-admin-3.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/fcrepo-common-3.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/fcrepo-server-3.4.1-cli-loader-main.jar"/>
+	<classpathentry kind="lib" path="lib/fcrepo-server-3.4.1-utilities-main.jar"/>
+	<classpathentry kind="lib" path="lib/fcrepo-server-3.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/jaxrpc-api-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jcl-over-slf4j-1.5.10.jar"/>
+	<classpathentry kind="lib" path="lib/jdom.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-over-slf4j-1.5.10.jar"/>
+	<classpathentry kind="lib" path="lib/logback-classic-0.9.18.jar"/>
+	<classpathentry kind="lib" path="lib/logback-core-0.9.18.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9-dom.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9-dom4j.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9-jdom.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9-s9api.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9-sql.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9-xom.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9-xpath.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9-xqj.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.5.10.jar"/>
+	<classpathentry kind="lib" path="lib/trippi-core-1.4.3.jar"/>
+	<classpathentry kind="lib" path="lib/wsdl4j-1.5.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

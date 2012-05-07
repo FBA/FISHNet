@@ -1,0 +1,410 @@
+/*
+	FwL3 Gallery 2 Theme
+	Copyright 2005-2007 FBA
+*/
+
+/* $Id: example.css,v 1.5 2006/03/27 02:44:36 pat Exp $ */
+
+
+
+.FwL-hide {
+    display: none;
+}
+
+
+/* CSS Browser Reset */
+body {
+        margin: 0;
+	/*background: #EEF0F2;*/
+}
+
+#fwl {
+    font-size: 12px;
+    font-family: verdana;
+}
+
+
+
+/*/////////////////////////////////////////////////////////////////////////        
+//                              MAIN CSS                                 //
+/////////////////////////////////////////////////////////////////////////*/
+
+/*
+        -------------------------------------------------------------
+        masthead
+        -------------------------------------------------------------
+*/
+
+
+
+/* ---------- Main navigation ---------- */
+
+/* common styling */
+#gc .menu {background:#3d3d3d; padding-left: 50px; font-family: verdana; font-size: 12px; color: silver; height:26px; position:relative; z-index:100;}
+#gc .menu ul li a, #gc .menu ul li a:visited {display:block; text-decoration:none; color:silver; margin: 0 auto; padding: 2px 5px; height:20px; text-align:center; border: 1px solid #000; background:#3d3d3d; line-height:20px; font-size:12px; overflow:hidden;}
+#gc .menu ul { padding:0; list-style: none;}
+#gc .menu ul li {float:left; position:relative;}
+#gc .menu ul li ul {display: none;}
+
+/* specific to non IE browsers */
+#gc .menu ul li:hover a {color:#fff; background:#1E2529;}
+#gc .menu ul li:hover ul {display:inline; position:absolute; top:25px; left:0; width:200px;}
+#gc .menu ul li:hover ul li a.hide {background:#6a3; color:#fff;}
+#gc .menu ul li:hover ul li:hover a.hide {background:#6fc; color:#000;}
+#gc .menu ul li:hover ul li ul {display: none;}
+#gc .menu ul li:hover ul li a {display:block; background:#1E2529; color:#fff; width: 200px; text-align:left; height: 100%;}
+#gc .menu ul li:hover ul li a:hover {background:#000; color:#fff;}
+#gc .menu ul li:hover ul li:hover ul {display:block; position:absolute; left:105px; top:0;}
+#gc .menu ul li:hover ul li:hover ul.left {left:-105px;}
+
+
+#gc .footer {
+    clear: both;
+    width: 100%;
+    font-size: 0.8em;
+    color: #000;
+    padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+    line-height: 1.8em;
+    margin: 0 auto;
+}
+
+#gc .footer a {
+    color: #000;
+}
+
+/*
+        -------------------------------
+        Global CSS attributes
+        i.e. h1, h2, p, li, etc etc...
+        -------------------------------
+*/
+
+body.gallery #gc {
+    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+    font-size: small;
+    background-color: #ffffff;
+    /**background-color: #525252;**/
+    color: #333;
+    text-align: center;
+}
+
+
+#gc hr {
+    color: #fff;
+    height: 0px;
+    border: none;
+}
+
+
+
+
+
+#gc {
+    clear:both;
+}
+
+#fwl a {
+	color: #5B677D;
+	text-decoration: underline;
+}
+
+#fwl a:hover {
+	color: #06C;
+	text-decoration: none;
+}
+
+#fwl hr, #fwl .separator {
+	border-color: #BFBFBF transparent #FFF;
+	border-style: solid;
+	border-width: 1px 0;
+}
+
+/* ---------- Main content body ---------- */
+
+#wrapper #fwl {
+	background-color:black;
+	background-image:url(../images/fwl/common/fwlMasthead_bg.gif);
+	background-repeat:repeat-x;
+	background-attachment:scroll;
+	background-position:center top;
+	height:30px;
+	width:100%;
+	padding:0;
+	margin:0;
+	border-bottom:2px;
+	border-bottom:black;
+}
+
+.ie6 #wrapper #fwl {
+	background-color:white;
+	background-image:url(../images/fwl/common/fwlMasthead_bg.gif);
+	background-repeat:repeat-x;
+	background-attachment:scroll;
+	background-position:center top;
+	height:30px;
+	width:100%;
+	padding:0;
+	margin:0;
+	border-bottom:2px;
+	border-bottom:black;
+}
+
+#fwl #main-content {
+	margin: 0 auto;
+	width: 98%;
+}
+
+/* ---------- masthead ---------- */
+
+#fwl #powered-by {
+    float:left;
+}
+
+#fwl #topbarphrase {
+    color:silver;
+    padding: 8px 0 0 5px;
+    float: left;
+    clear: both;
+}
+
+#fwl #FwLLogo {
+    width: 200px;
+    height: 30px;
+    background: url("../images/fwl/common/FwLLogo.png") no-repeat;
+    float: left;
+}
+
+#fwl .fba {
+    display: none;
+}
+
+#fwl #masthead {
+    flaot: left;
+}
+
+#fwl #banner {
+	height: 30px;
+	top: -1px;
+}
+
+#fwl #toplinks ul {
+    margin:0;
+}
+#fwl #topLinks {
+    font-size:9pt;
+    vertical-align:top;
+    margin-top:0;
+    margin-bottom:0;
+    padding-top:5px;
+    float:left;
+}
+#fwl #topLinks li {
+    display:inline;
+    padding-left:3px;
+    padding-right:3px;
+}
+#fwl #topLinks a{
+    color:silver;
+    text-decoration:none;
+}
+#fwl #topLinks a:visited{
+    color:silver;
+    text-decoration:none;
+}
+#fwl #topLinks a:hover{
+    color:white;
+    text-decoration:none;
+    background-color: transparent;
+}
+
+/* ---------- Section Header ---------- */
+
+#fwl #heading {
+    margin:0;
+    padding:0;
+    color:silver;
+}
+
+#fwl #sectionHeader {
+    clear: both;
+    margin: 0 auto 20px;
+}
+
+#fwl #headerContent {
+    float: left;
+    height: 200px;
+	  width: 100%;
+	  margin: 0;
+	  padding: 0;
+	  position: relative;
+	  background-image: url("../images/fwl/common/Headerbg.jpg");
+	  background-repeat: repeat-x;
+	  background-attachment: scroll;
+	  background-position: center top;
+}
+
+#fwl #header1 {
+    height: 200px;
+    margin: 0 0 0 15px;
+    padding: 0;
+}
+
+#fwl #bookcase {
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+}
+
+#fwl #company-logo {
+	overflow: hidden;
+	max-width: 50%;
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+}
+
+.kwicks {
+	list-style: none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	float: right;
+}
+
+.kwicks li {
+	width: 50px;
+	height: 200px;
+	display: block;
+	overflow: hidden;
+	padding: 0;
+	cursor: pointer;
+}
+
+.kwicks a {
+	display: block;
+	height: 200px;
+	outline: none;
+}
+
+.Beginners {
+	background-image: url("../images/fwl/common/beginners.gif");
+}
+
+.Species {
+	background-image: url("../images/fwl/common/species.gif");
+}
+
+.Habitats {
+	background-image: url("../images/fwl/common/habitats.gif");
+}
+
+.Identification {
+	background-image: url("../images/fwl/common/identification.gif");
+}
+
+.Images {
+	background-image: url("../images/fwl/common/images.gif");
+}
+
+.Education {
+	background-image: url("../images/fwl/common/education.gif");
+}
+
+.Science {
+	background-image: url("../images/fwl/common/science.gif");
+}
+
+.Processes {
+	background-image: url("../images/fwl/common/processes.gif");
+}
+
+.Management {
+	background-image: url("../images/fwl/common/management.gif");
+}
+
+.Fisheries {
+	background-image: url("../images/fwl/common/fisheries.gif");
+}
+
+.Impacts {
+	background-image: url("../images/fwl/common/impacts.gif");
+	margin-right: 0;
+}
+
+#fwl #sectionhead {
+    float: left;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/mainHeaderbg.gif);
+    border-bottom: 3px solid #336666;
+    width: 100%;
+    padding:0;
+    background-repeat:repeat-x;
+    background-position:center top;
+}
+
+#fwl #sectiontitle {
+    color: #336666;
+    background-image: url(../images/sectionTitle_bg.png);
+    background-repeat: no-repeat;
+    border: none;
+    font-size: 24pt;
+    font-family: Georgia, "Times New Roman", times, serif;
+    margin: 0;
+    padding-top: 6px;
+    padding-bottom:6px;
+    padding-left:50px;
+    padding-right:0;
+}
+
+
+
+
+/* ---------- Headers ---------- */
+
+#fwl h1 {
+	color: #273d5f;
+    font-size: 1.6em;
+    font-family: Verdana;
+}
+
+#fwl h2 {
+	color: #273d5f;
+}
+
+#fwl h3 {
+	color: #273d5f;
+}
+
+#fwl h4 {
+	color: #273d5f;
+}
+
+/* ---------- Links ---------- */
+
+#fwl a {
+	color: #369;
+	text-decoration: none;
+}
+
+/*a:hover {
+        background-color: #cdd7a2;
+	color: #273d5f;
+	text-decoration: none;
+}*/
+
+#fwl a:visited {
+}
+
+#fwl #skip-to-content,#fwl #banner h2,#fwl #banner h3,#fwl #navigation h1,#fwl .site-breadcrumbs h1{clip:rect(0 0 0 0);position:absolute;}
+
+#fwl #signin {
+    float: right;
+    padding: 5px 5px 0 0;
+}
+
+#fwl #signin a {
+    color:silver;
+}

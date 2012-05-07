@@ -1,0 +1,378 @@
+/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+
+/* ---------- Base ---------- */
+
+html {
+	height: 100%;
+}
+
+body {
+	background: #fff;
+	font-size: 11px;
+}
+
+/* ---------- Main content body ---------- */
+
+#wrapper {
+	/*background: transparent url(../images/common/fwlMasthead_bg.gif) repeat-x 0 0;*/
+	/*padding: 0 0 0 0;*/
+	background-color:black;
+	background-image:url(../images/common/fwlMasthead_bg.gif);
+	background-repeat:repeat-x;
+	background-attachment:scroll;
+	background-position:center top;
+	color:silver;
+	height:30px;
+	width:100%;
+	padding:0;
+	margin:0;
+	border-bottom:2px;
+	border-bottom:black;
+}
+
+#content-wrapper {
+	margin: 0 auto;
+	width: 98%;
+}
+
+/* ---------- Banner ---------- */
+
+#banner {
+	/*background: transparent url(../images/common/banner_bg.jpg) no-repeat 20% 0;*/
+	height: 30px;
+	top: -1px;
+}
+
+#banner h1.logo {
+	display: block;
+	font-size: 2em;
+	margin: 0 0 0 10px;
+	padding: 0;
+}
+
+#banner .logo a {
+	text-decoration: none;
+}
+
+.ie6 #banner .logo {
+	zoom: 1;
+}
+
+/* ---------- FwL Masthead ---------- */
+
+#FwLMasthead {
+	position: absolute;
+	left: 175px;
+	top: 0px;
+}
+
+#topLinks {
+    font-size:9pt;
+    vertical-align:top;
+    margin-top:0;
+    margin-bottom:0;
+}
+#topLinks li {
+    display:inline;
+    padding-left:3px;
+    padding-right:3px;
+}
+#topLinks a{
+    color:silver;
+    text-decoration:none;
+}
+#topLinks a:visited{
+    color:silver;
+    text-decoration:none;
+}
+#topLinks a:hover{
+    color:white;
+    text-decoration:none;
+}
+
+
+
+/* ---------- Species Header ---------- */
+
+.ie #sectionhead {
+	background-image: url(../images/common/speciesHeader_bg.gif);
+	height:50px;
+	border-bottom: 4px solid;
+	width: 100%;
+	margin:0;
+	padding:0;
+	background-repeat:repeat-x;
+	background-attachment:scroll;
+        background-position:center top;
+        border-bottom-color: #cdd7a2;
+}
+
+.ie #sectiontitle {
+	color: #cdd7a2;
+	font-size: 22pt;
+	font-family: Georgia, "Times New Roman", times, serif;
+	margin-left:50px;
+	margin-right:0;
+	margin-top:0;
+	margin-bottom:10px;
+	padding-top: 10px;
+	padding-bottom:0;
+	padding-left:0;
+        padding-right:0;
+}
+
+#sectionhead {
+	background-image: url(../images/common/speciesHeader_bg.gif);
+	height:50px;
+	border-bottom: 4px solid;
+	width: 100%;
+	margin:0;
+	padding:0;
+	background-repeat:repeat-x;
+	background-attachment:scroll;
+        background-position:center top;
+        border-bottom-color: #cdd7a2;
+}
+
+#sectiontitle {
+	color: #cdd7a2;
+	font-size: 24pt;
+	font-family: Georgia, "Times New Roman", times, serif;
+	margin-left:50px;
+	margin-right:0;
+	margin-top:0;
+	margin-bottom:0;
+	padding-top: 10px;
+	padding-bottom:0;
+	padding-left:0;
+        padding-right:0;
+}
+
+/* ---------- Dock ---------- */
+
+.js .interactive-mode {
+	right: 9px;
+	top: 0px;
+}
+
+
+/* ---------- Main navigation ---------- */
+
+#navigation {
+	float:left;
+	width:100%;
+	font-size:93%;
+	line-height:normal;
+
+}
+
+#navigation ul {
+	margin-left:49px;
+	margin-top:-3px;
+	margin-right:0px;
+        margin-bottom:0px;
+	padding:0;
+        list-style:none;
+}
+
+#navigation li {
+	float:left;
+	background:url("../images/common/norm_right.gif") no-repeat right bottom;
+	margin:0;
+	padding:0;
+}
+
+#navigation a {
+	display:block;
+	background:url("../images/common/norm_left.gif") no-repeat left bottom;
+	padding:5px 15px;
+}
+
+
+#navigation li a {
+	display: block;
+	text-decoration: none;
+}
+
+#navigation li a span {
+	text-decoration: none;
+}
+
+#navigation li.selected a,
+#navigation li a:hover {
+	color: #000;
+}
+
+#navigation li.selected a span {
+	background: url(../images/navigation/bullet_selected.png) no-repeat 0 50%;
+	padding-left: 10px;
+}
+
+/* ---------- Add/remove page ---------- */
+
+.js #navigation .enter-page {
+	background-color: #1E2529;
+	padding: 2px;
+}
+
+.js #navigation .enter-page a {
+	background: none;
+	display: inline;
+	font-weight: bold;
+	padding: 0;
+}
+
+.js #navigation .enter-page .save-page {
+	background: url(../images/dock/my_place_current.png) no-repeat 0 50%;
+	margin: 0 10px;
+	padding-left: 20px;
+}
+
+.ie.js #navigation .enter-page .save-page {
+	display: inline-block;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	vertical-align: top;
+}
+
+.js #navigation .enter-page .cancel-page {
+	display: none;
+}
+
+.ie.js #navigation .enter-page {
+	padding: 0;
+}
+
+.ie.js #navigation .enter-page input.text {
+	margin: 2px;
+	padding: 3px 1px;
+}
+
+.js #navigation {
+	position: relative;
+}
+
+.js #add-page {
+	background: #020509;
+	border: 1px solid #304049;
+	border-bottom: none;
+	bottom: 100%;
+	font-weight: bold;
+	position: absolute;
+	right: 5%;
+}
+
+.js #add-page a {
+        background: none;
+	display: block;
+	text-decoration: none;
+}
+
+.js #add-page a span {
+	background: url(../images/common/add.png) no-repeat 0 50%;
+	display: block;
+	margin-left: 15px;
+	padding: 5px 20px 2px;
+}
+
+/* ---------- Portlet ---------- */
+
+/* sides */
+.portlet-l {background: url(../images/common/dot.gif) 0 0 repeat-y}
+.portlet-r {background: url(../images/common/dot.gif) 100% 0 repeat-y} 
+
+/* corners */
+.portlet-bl {background: url(../images/common/bl.gif) 0 100% no-repeat}
+.portlet-br {background: url(../images/common/br.gif) 100% 100% no-repeat}
+.portlet-tl {background: url(../images/common/tl.gif) 0 0 no-repeat}
+.portlet-tr {background: url(../images/common/tr.gif) 100% 0 no-repeat} 
+
+/*.portlet-border {
+	border: 2px solid;
+	border-color: #627e82;
+	margin: 10px;
+}*/
+
+.portlet {
+	background: #FFF;
+	margin-left:10px;
+	margin-top:10px;
+	margin-right:10px;
+        margin-bottom:10px;
+	padding: 10px;
+	color: #000;
+	font-size: 10pt;
+	border-top: 2px solid;
+	border-bottom: 2px solid;
+	border-color: #627e82;
+}
+
+.ie .portlet {
+	margin-bottom: 0px;
+}
+
+.portlet-topper {
+	border-bottom: 2px solid #cdd7a2;
+	padding-right: 40px;
+}
+
+.portlet-title {
+	color: #000;
+	padding: 5px;
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+.ie .portlet-title {
+	padding-bottom: 5px;
+}
+
+.portlet-icons {
+	right: 6px;
+}
+
+.portlet-icon-back,
+.portlet-icon-back:hover {
+	color: #000;
+}
+
+/* ---------- Add Application ---------- */
+
+body.lfr-has-sidebar {
+	padding-left: 0;
+}
+
+.lfr-has-sidebar #content-wrapper {
+	padding-left: 270px;
+	width: auto;
+}
+
+/* ---------- Actions button ---------- */
+
+.lfr-actions.portlet-options {
+	margin: 0 5px 0 0;
+}
+
+.lfr-actions.portlet-options .lfr-trigger strong {
+	padding: 0;
+}
+
+.lfr-actions.portlet-options .lfr-trigger strong span {
+	background-image: none;
+	color: #000;
+	height: auto;
+	padding: 0 3px;
+	text-indent: 0;
+	width: auto;
+}
+
+.portlet-options.visible {
+	background: #FFF url(../images/forms/button.png) repeat-x 0 100%;
+	border-color: #DEDEDE;
+	padding: 0 0 1px 0;
+}
+
+.portlet-options.visible .lfr-trigger strong span {
+	background-image: none;
+	color: #06C;
+}

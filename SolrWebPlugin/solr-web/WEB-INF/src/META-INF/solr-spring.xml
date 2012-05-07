@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+>
+	<bean id="solrServer" class="org.apache.solr.client.solrj.impl.CommonsHttpSolrServer">
+		<constructor-arg type="java.lang.String" value="http://localhost:8080/solr" />
+	</bean>
+	<bean id="indexSearcher.solr" class="com.liferay.portal.search.solr.SolrIndexSearcherImpl">
+		<property name="solrServer" ref="solrServer" />
+	</bean>
+	<bean id="indexWriter.solr" class="com.liferay.portal.search.solr.SolrIndexWriterImpl">
+		<property name="solrServer" ref="solrServer" />
+	</bean>
+	<bean id="searchEngineUtil" class="com.liferay.portal.search.solr.SolrSearchEngineUtil">
+		<property name="searchEngine">
+			<bean class="com.liferay.portal.search.solr.SolrSearchEngineImpl" init-method="init" destroy-method="destroy">
+				<property name="name" value="Solr" />
+				<property name="searcher" ref="indexSearcher.solr" />
+				<property name="writer" ref="indexWriter.solr" />
+				<property name="indexReadOnly" value="false" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="messageListener.solr_reader" class="com.liferay.portal.search.solr.messaging.SolrReaderMessageListener" />
+	<bean id="messageListener.solr_writer" class="com.liferay.portal.search.solr.messaging.SolrWriterMessageListener" />
+	<bean id="messagingConfigurator" class="com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator" depends-on="searchEngineUtil" init-method="init" destroy-method="destroy">
+		<property name="messageListeners">
+			<map key-type="java.lang.String" value-type="java.util.List">
+				<entry key="liferay/search_reader">
+					<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+						<ref bean="messageListener.solr_reader" />
+					</list>
+				</entry>
+				<entry key="liferay/search_writer">
+					<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+						<ref bean="messageListener.solr_writer" />
+					</list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+</beans>

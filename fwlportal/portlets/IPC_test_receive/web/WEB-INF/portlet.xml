@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<portlet-app xmlns='http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd' version='2.0'>
+    <portlet>
+        <description>IPC_test_receive</description>
+        <portlet-name>IPC_test_receive</portlet-name>
+        <display-name>IPC_test_receive</display-name>
+        <portlet-class>org.freshwaterlife.portlets.ipc.testreceive.IPC_test_receive</portlet-class>
+        <expiration-cache>0</expiration-cache>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+        </supports>
+        <resource-bundle>org.freshwaterlife.portlets.ipc.testreceive.messages</resource-bundle>
+        <portlet-info>
+            <title>IPC_test_receive</title>
+            <short-title>IPC_test_receive</short-title>
+        </portlet-info>
+        <supported-processing-event xmlns:qname_ns__='http://www.freshwaterlife.org/portlets/ipc'>
+            <qname>qname_ns__:testString</qname>
+        </supported-processing-event>
+        <supported-processing-event xmlns:qname_ns__='http://www.freshwaterlife.org/portlets/ipc'>
+            <qname>qname_ns__:person</qname>
+        </supported-processing-event>
+    </portlet>
+    <event-definition xmlns:qname_ns__='http://www.freshwaterlife.org/portlets/ipc'>
+        <qname>qname_ns__:testString</qname>
+        <value-type>java.lang.String</value-type>
+    </event-definition>
+    <event-definition xmlns:qname_ns__='http://www.freshwaterlife.org/portlets/ipc'>
+        <qname>qname_ns__:person</qname>
+        <value-type>org.freshwaterlife.portlets.ipc.TestPerson</value-type>
+    </event-definition>
+</portlet-app>

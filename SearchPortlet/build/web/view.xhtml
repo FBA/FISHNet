@@ -1,0 +1,153 @@
+<div
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:form id="searchForm">
+        <h:outputText id="triggerPageBean" value="#{pageBean.urlQValue}" style="display: none"/>
+        <center>
+            <h:panelGrid columns="1" border="0" cellpadding="0" cellspacing="0" width="400">
+                <br/>
+                <br/>
+                <h:panelGroup>
+                    <h:inputText id="qValue" value="#{userBean.qValue}"
+                                 size="40" required="true"
+                                 onfocus="clearText(this)" styleClass="form-text"
+                                 onkeypress="if (event.keyCode == 13) { document.getElementById('searchForm:submitButton').click(); return false;}"/>
+                    <!-- the onkeypress above stops the enter key submitting the form normally. It should go via userBean.doSearch -->
+                    <h:outputText value="  "/>
+                    <h:commandButton id="submitButton" type="submit" action="#{userBean.doSearch}" styleClass="portlet-form-button" value="Go" />
+                </h:panelGroup>
+            </h:panelGrid>
+        </center>
+        <br/><br/>
+        <ui:fragment rendered="${userBean.qValue != 'search FreshwaterLife'}">
+            <div id="markupTabs">
+                <ul class="aui-tabview-list aui-widget-hd" id="test">
+                    <li class="aui-tab"><a class="aui-tab-label" href="javascript:;">FreshwaterLife</a></li>
+                    <li class="aui-tab"><a class="aui-tab-label" href="javascript:;">Image Gallery</a></li>
+                </ul>
+                <div class="aui-tabview-content aui-tabview-content-border aui-widget-bd" id="testContent">
+                    <div class="aui-tabview-content-item">
+                        <ui:fragment rendered="#{userBean.numOfLiferayResults != 0}">
+                            <!-- There are some results -->
+                            <ui:repeat value="#{userBean.liferaySearchResults}" var="item">
+                                <br/>
+                                <div style="font-weight: bold; display: inline">
+                                    <h:outputLink value="#{item.journalArticleURL}">
+                                        <h:outputText escape="false" value="#{item.title}"/>
+                                    </h:outputLink>
+                                    <br/>
+                                </div>
+                                <div style="display: inline">
+                                    <h:outputText value="#{item.contentSubstring}"/>
+                                    <br/>
+                                    <h:outputText value="#{item.summary}" />
+                                </div>
+                                <br/><hr/>
+                            </ui:repeat>
+                        </ui:fragment>
+                        <!-- above is the rendered section for returned results, below for no results-->
+                        <ui:fragment rendered="#{userBean.numOfLiferayResults == 0}">
+                            <div style="font-weight: bold; display: inline">
+                                <h:outputText value="No results found"/>
+                            </div>
+                        </ui:fragment>
+                    </div>
+                    <div class="aui-tabview-content-item">
+                        <ui:fragment rendered="#{userBean.numOfImageResults != 0}">
+                            <!-- There are some results -->
+                            <ui:repeat value="#{userBean.imageSearchResults}" var="item">
+                                <br/>
+                                <div style="font-weight: bold; display: inline">
+                                    <h:outputText escape="false" value="#{item.title}"/>
+                                    <br/>
+                                </div>
+                                <div style="display: inline;">
+                                    <h:panelGrid columns="3" cellpadding="0" cellspacing="0"  columnClasses="colStyle1,colStyle2,colStyle3" >
+                                        <h:outputLink value="#{item.forwardUrl}">
+                                            <h:graphicImage alt="#{item.title}" value="#{item.thumbUrl}" />
+                                        </h:outputLink>
+                                        <h:outputText value=" "/>
+                                        <h:outputText escape="false" value="#{item.contentSubstring}"/>
+                                    </h:panelGrid>
+                                </div>
+                                <br/><hr/>
+                            </ui:repeat>
+                        </ui:fragment>
+                        <!-- above is the rendered section for returned results, below for no results-->
+                        <ui:fragment rendered="#{userBean.numOfImageResults == 0}">
+                            <div style="font-weight: bold; display: inline">
+                                <h:outputText value="No results found"/>
+                            </div>
+                        </ui:fragment>
+                    </div>
+                </div>
+
+                <!-- code to handle the tabs -->
+                <script src="WEB-INF/js/aui/aui.js" type="text/javascript"/>
+                <script type="text/javascript" charset="utf-8">
+                            AUI().ready(
+                    'aui-tabs', 'substitute',
+                    function(A) {
+                        var tabs1 = new A.TabView(
+                        {
+                            boundingBox: '#markupTabs',
+                            listNode: '#test',
+                            contentNode: '#testContent'
+                        }
+                        );
+
+                        tabs1.render();
+
+                        A.on(
+                            'click',
+                            function(event) {
+                                var buttonValue = this.get('value');
+
+                                if (this.hasClass('enableTab')) {
+                                    tabs1.enableTab(1);
+                                    buttonValue = buttonValue.replace(/Enable/, 'Disable');
+                                }
+                                else {
+                                    tabs1.disableTab(1);
+                                    buttonValue = buttonValue.replace(/Disable/, 'Enable');
+                                }
+
+                                this.toggleClass('enableTab');
+                                this.set('value', buttonValue);
+                            },
+                            '#disable1'
+                            );
+
+                    }
+                );
+            
+
+                </script>
+                <style type="text/css">
+                    .colStyle1 { width: 160px;
+                    }
+                    .colStyle2 { width: 20px;
+                    }
+                    .colStyle3 {
+                    }
+                    .aui-tabview-content-border {
+                        border:1px solid #c8c9ca;
+                        padding:4px;
+                    }
+                </style>
+            </div>
+        </ui:fragment>
+        <script type="text/javascript" charset="utf-8">
+            function clearText(field)
+            {
+                if ('search FreshwaterLife' == field.value)
+                {
+                    field.value = '';
+                }
+            }
+        </script>
+    </h:form>
+</div>

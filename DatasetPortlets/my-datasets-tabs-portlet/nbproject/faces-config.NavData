@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only">
+        <Node id="view.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="demoted.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="applyForDOI.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="*" x="113" y="-77" zoom="true"/>
+        <Node id="assignedreviewer.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="downloadDataset.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="approveDataset.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="demoteToRed.xhtml" x="900" y="150" zoom="true"/>
+    </Scope>
+    <Scope Scope="Project">
+        <Node id="edit.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="view.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="demoted.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="applyForDOI.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="*" x="400" y="300" zoom="true"/>
+        <Node id="help.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="approveDataset.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="demoteToRed.xhtml" x="900" y="150" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations">
+        <Node id="view.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="demoted.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="applyForDOI.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="*" x="113" y="-77" zoom="true"/>
+        <Node id="assignedreviewer.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="downloadDataset.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="approveDataset.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="demoteToRed.xhtml" x="900" y="150" zoom="true"/>
+    </Scope>
+</Scene>
